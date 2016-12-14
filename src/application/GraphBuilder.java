@@ -19,8 +19,8 @@ public class GraphBuilder implements IGraphBuilder{
 		
 		for(ClassNode node: pg.getNodes()){
 			for(ClassNode other: pg.getNodes()){
-				if(node.superName.equals(other.name)){
-					IEdge e = new ExtendsEdge(node, other);
+				if(node.superName != null && node.superName.equals(other.name)){
+					IEdge e = new ExtendsEdge(other, node);
 					pg.addEdge(e);
 				}
 			}

@@ -11,7 +11,7 @@ import application.GraphVizCodeProcessor;
 public class GraphVizCodeProcessorTest {
 	@Test
 	public void testProcess() throws IOException{
-		CodeProcessor cp = new GraphVizCodeProcessor(new String[]{"java.lang.String"});
+		CodeProcessor cp = new GraphVizCodeProcessor(new String[]{"java.lang.String", "java.lang.Object"});
 		cp.setFile(new File("./input_output/test.png"));
 		cp.process();
 
