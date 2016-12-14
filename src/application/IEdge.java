@@ -1,3 +1,4 @@
+package application;
 import jdk.internal.org.objectweb.asm.tree.ClassNode;
 
 public abstract class IEdge {

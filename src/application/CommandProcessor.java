@@ -1,3 +1,4 @@
+package application;
 
 public class CommandProcessor extends CommandLineProcessor {
 

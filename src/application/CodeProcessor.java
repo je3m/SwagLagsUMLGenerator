@@ -1,3 +1,4 @@
+package application;
 
 public abstract class CodeProcessor {
 	protected IGraphReader gr;
