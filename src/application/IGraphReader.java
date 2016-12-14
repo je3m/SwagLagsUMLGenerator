@@ -1,5 +1,5 @@
 package application;
 
-public class IGraphReader {
-
+public interface IGraphReader {
+	public String parse(ProgramGraph g);
 }
