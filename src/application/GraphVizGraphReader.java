@@ -32,7 +32,7 @@ public class GraphVizGraphReader implements IGraphReader {
 				//is an interface
 				code += "\\<\\<interface\\>\\>\\n";
 			}
-			code += c.name.replaceAll("/", "_") + "|";
+			code += c.name.substring(c.name.lastIndexOf('/') + 1) + "|";
 			List<FieldNode> fields = c.fields;
 			for(FieldNode field: fields){
 				if((field.access & Opcodes.ACC_PUBLIC) > 0){
@@ -54,7 +54,14 @@ public class GraphVizGraphReader implements IGraphReader {
 				} else if((method.access & Opcodes.ACC_PROTECTED) > 0){
 					code += "#";
 				}
-				code+= " " + method.name +  "(";
+				String methodName = method.name;
+				if(methodName.equals("<init>")){
+					//Replace with class name if it is a constructor
+					methodName = c.name.substring(c.name.lastIndexOf('/') + 1);
+				} else if (methodName.equals("<clinit>")){
+					methodName = "static " + c.name.substring(c.name.lastIndexOf('/') + 1);
+				}
+				code+= " " + methodName +  "(";
 				boolean hasArgs = false;
 				for(Type argType : Type.getArgumentTypes(method.desc)){
 					hasArgs = true;

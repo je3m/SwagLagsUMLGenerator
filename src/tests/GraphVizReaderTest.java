@@ -15,7 +15,7 @@ public class GraphVizReaderTest {
 		GraphBuilder builder = new GraphBuilder();
 		GraphVizGraphReader reader = new GraphVizGraphReader();
 
-		ProgramGraph graph = builder.build(new String[]{"application.ExtendsEdge"});
+		ProgramGraph graph = builder.build(new String[]{"java.lang.Boolean"});
 
 		String answer = reader.parse(graph);
 
