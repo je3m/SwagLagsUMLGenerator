@@ -11,6 +11,10 @@ import jdk.internal.org.objectweb.asm.Opcodes;
 
 public class GraphVizGraphReader implements IGraphReader {
 
+	private String getClassName(String s){
+		return s.substring(s.lastIndexOf('/') + 1);
+	}
+
 	private String getClassName(Type t) {
 		String[] temp = t.getClassName().split("(\\.|\\/)");
 
@@ -25,14 +29,17 @@ public class GraphVizGraphReader implements IGraphReader {
 		code += "rankdir=BT;\n";
 
 		for(ClassNode c : g.getNodes()) {
-			code += getClassName(c.name) + " [\n";
+			code += this.getClassName(c.name) + " [\n";
 			code += "shape =\"record\",\n";
 			code += "label = \"{";
 			if((Opcodes.ACC_INTERFACE & c.access) != 0){
 				//is an interface
 				code += "\\<\\<interface\\>\\>\\n";
+			} else if((Opcodes.ACC_ABSTRACT & c.access) != 0){
+				//is an interface
+				code += "\\<\\<abstract\\>\\>\\n";
 			}
-			code += getClassName(c.name) + "|";
+			code += this.getClassName(c.name) + "|";
 			List<FieldNode> fields = c.fields;
 			for(FieldNode field: fields){
 				if((field.access & Opcodes.ACC_PUBLIC) > 0){
@@ -65,9 +72,9 @@ public class GraphVizGraphReader implements IGraphReader {
 				String methodName = method.name;
 				if(methodName.equals("<init>")){
 					//Replace with class name if it is a constructor
-					methodName = getClassName(c.name);
+					methodName = this.getClassName(c.name);
 				} else if (methodName.equals("<clinit>")){
-					methodName = getClassName(c.name);
+					methodName = this.getClassName(c.name);
 				}
 				code+= " " + methodName +  "(";
 				boolean hasArgs = false;
@@ -85,12 +92,14 @@ public class GraphVizGraphReader implements IGraphReader {
 			code += "}\"];\n";
 
 		}
-		
-		for(IEdge e :g.getEdges()){
-			code += getClassName(e.getTail().name);
+
+		for(Edge e :g.getEdges()){
+			code += this.getClassName(e.getTail().name);
 			code += " -> ";
-			code += getClassName(e.getHead().name);
+			code += this.getClassName(e.getHead().name);
 			if(e.getDescription().equals("extends")){
+				code += " [arrowhead=\"onormal\", style=\"solid\"];\n";
+			} else if (e.getDescription().equals("implements")){
 				code += " [arrowhead=\"onormal\", style=\"dashed\"];\n";
 			} else {
 				throw new IllegalArgumentException();
@@ -99,10 +108,6 @@ public class GraphVizGraphReader implements IGraphReader {
 
 		code += "\n}";
 		return code;
-	}
-	
-	private String getClassName(String s){
-		return s.substring(s.lastIndexOf('/') + 1);
 	}
 
 }

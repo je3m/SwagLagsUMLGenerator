@@ -1,11 +1,11 @@
 package application;
 import org.objectweb.asm.tree.ClassNode;
 
-public abstract class IEdge {
+public abstract class Edge {
 	private ClassNode head;
 	private ClassNode tail;
 	
-	public IEdge(ClassNode head, ClassNode tail){
+	public Edge(ClassNode head, ClassNode tail){
 		this.head = head;
 		this.tail = tail;
 	}

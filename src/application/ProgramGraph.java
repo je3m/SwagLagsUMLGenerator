@@ -5,14 +5,14 @@ import org.objectweb.asm.tree.ClassNode;
 
 public class ProgramGraph {
 	private ArrayList<ClassNode> c;
-	private ArrayList<IEdge> e;
+	private ArrayList<Edge> e;
 
 	public ProgramGraph(){
 		this.c = new ArrayList<ClassNode>();
-		this.e = new ArrayList<IEdge>();
+		this.e = new ArrayList<Edge>();
 	}
 
-	public void addEdge(IEdge e){
+	public void addEdge(Edge e){
 		this.e.add(e);
 	}
 
@@ -20,7 +20,7 @@ public class ProgramGraph {
 		this.c.add(n);
 	}
 
-	public ArrayList<IEdge> getEdges(){
+	public ArrayList<Edge> getEdges(){
 		return this.e;
 	}
 

@@ -4,8 +4,6 @@ import java.io.IOException;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.tree.ClassNode;
 
-import com.sun.javafx.sg.prism.NodeEffectInput;
-
 
 public class GraphBuilder implements IGraphBuilder{
 
@@ -16,11 +14,14 @@ public class GraphBuilder implements IGraphBuilder{
 		for(String className : classes){
 			this.readClass(className, pg);
 		}
-		
+
 		for(ClassNode node: pg.getNodes()){
 			for(ClassNode other: pg.getNodes()){
-				if(node.superName != null && node.superName.equals(other.name)){
-					IEdge e = new ExtendsEdge(other, node);
+				if((node.superName != null) && node.superName.equals(other.name)){
+					Edge e = new ExtendsEdge(other, node);
+					pg.addEdge(e);
+				} else if((node.interfaces != null) && node.interfaces.contains(other.name)){
+					Edge e = new ImplementsEdge(other, node);
 					pg.addEdge(e);
 				}
 			}
