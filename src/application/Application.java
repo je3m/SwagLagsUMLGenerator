@@ -7,8 +7,9 @@ public class Application {
 		CommandLineProcessor c = new BasicCommandLineProcessor();
 		OutputFileCommandLineArgumentProcessorDecorator o = new OutputFileCommandLineArgumentProcessorDecorator(c);
 		RecursionArgumentProcessor r = new RecursionArgumentProcessor(o);
+		AccessLevelArgumentProcessor a = new AccessLevelArgumentProcessor(r);
 
-		CodeProcessor p = r.process(args);
+		CodeProcessor p = a.process(args);
 		p.process();
 	}
 }

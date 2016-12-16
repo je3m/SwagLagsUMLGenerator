@@ -17,12 +17,13 @@ public class RecursiveNodeGenerator implements INodeGenerator {
 	}
 
 	private void readClass(String s, ProgramGraph pg) throws IOException {
+		s = s.replaceAll("\\.","/");
 		if(this.visited.contains(s)){
 			return;
 		} else {
 			this.visited.add(s);
 		}
-
+		System.out.println(s);
 		ClassReader reader = new ClassReader(s);
 		ClassNode node = new ClassNode();
 		reader.accept(node, ClassReader.EXPAND_FRAMES);

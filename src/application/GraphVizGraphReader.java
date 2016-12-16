@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.objectweb.asm.Type;
@@ -10,7 +11,17 @@ import org.objectweb.asm.tree.MethodNode;
 import jdk.internal.org.objectweb.asm.Opcodes;
 
 public class GraphVizGraphReader implements IGraphReader {
+	ArrayList<FieldReader> fieldReaders = new ArrayList<FieldReader>();
+	ArrayList<MethodReader> methodReaders = new ArrayList<MethodReader>();
 
+	public void addMethodReader(MethodReader r){
+		this.methodReaders.add(r);
+	}
+	
+	public void addFieldReader(FieldReader r){
+		this.fieldReaders.add(r);
+	}
+	
 	private String getClassName(String s){
 		return s.substring(s.lastIndexOf('/') + 1);
 	}
@@ -29,6 +40,7 @@ public class GraphVizGraphReader implements IGraphReader {
 		code += "rankdir=BT;\n";
 
 		for(ClassNode c : g.getNodes()) {
+			c.name = c.name.replaceAll("\\$", "_");
 			code += this.getClassName(c.name) + " [\n";
 			code += "shape =\"record\",\n";
 			code += "label = \"{";
@@ -40,7 +52,12 @@ public class GraphVizGraphReader implements IGraphReader {
 				code += "\\<\\<abstract\\>\\>\\n";
 			}
 			code += this.getClassName(c.name) + "|";
-			List<FieldNode> fields = c.fields;
+			List<FieldNode> fields = new ArrayList<FieldNode>();
+			for(FieldReader r: fieldReaders){
+				for(FieldNode n : r.getFields(c)){
+					fields.add(n);
+				}
+			}
 			for(FieldNode field: fields){
 				if((field.access & Opcodes.ACC_PUBLIC) > 0){
 					code += "+ ";
@@ -55,7 +72,12 @@ public class GraphVizGraphReader implements IGraphReader {
 				code+= field.name + " : " + this.getClassName(Type.getType(field.desc))+ "\\l";
 			}
 			code += "|";
-			List<MethodNode> methods = c.methods;
+			List<MethodNode> methods = new ArrayList<MethodNode>();
+			for(MethodReader r: methodReaders){
+				for(MethodNode n : r.getMethods(c)){
+					methods.add(n);
+				}
+			}
 			for(MethodNode method: methods){
 				if((method.access & Opcodes.ACC_PUBLIC) > 0){
 					code += "+ ";

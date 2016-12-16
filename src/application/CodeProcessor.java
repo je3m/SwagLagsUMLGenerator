@@ -22,7 +22,14 @@ public abstract class CodeProcessor {
 	public void setNodeGenerator(INodeGenerator n){
 		this.g.setNodeGenerator(n);
 	}
+	
+	public void addMethodReader(MethodReader r){
+		this.gr.addMethodReader(r);
+	}
 
+	public void addFieldReader(FieldReader r){
+		this.gr.addFieldReader(r);
+	}
 	public void setParser(IGraphReader gr) {
 		this.gr = gr;
 	}
