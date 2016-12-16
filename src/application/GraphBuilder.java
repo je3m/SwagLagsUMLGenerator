@@ -1,20 +1,23 @@
 package application;
 import java.io.IOException;
 
-import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.tree.ClassNode;
 
 
 public class GraphBuilder implements IGraphBuilder{
+	INodeGenerator nodeGen = new BasicNodeGenerator();
 
 	@Override
 	public ProgramGraph build(String[] classes) throws IOException {
 		ProgramGraph pg = new ProgramGraph();
 
-		for(String className : classes){
-			this.readClass(className, pg);
-		}
+		this.generateNodes(pg, classes);
+		this.generateEdges(pg);
 
+		return pg;
+	}
+
+	private void generateEdges(ProgramGraph pg) {
 		for(ClassNode node: pg.getNodes()){
 			for(ClassNode other: pg.getNodes()){
 				if((node.superName != null) && node.superName.equals(other.name)){
@@ -26,15 +29,14 @@ public class GraphBuilder implements IGraphBuilder{
 				}
 			}
 		}
-
-		return pg;
 	}
 
-	private void readClass(String s, ProgramGraph pg) throws IOException {
-		ClassReader reader = new ClassReader(s);
-		ClassNode node = new ClassNode();
-		reader.accept(node, ClassReader.EXPAND_FRAMES);
+	private void generateNodes(ProgramGraph pg, String[] s) throws IOException{
+		this.nodeGen.generateNodes(pg, s);
+	}
 
-		pg.addNode(node);
+
+	public void setNodeGenerator(INodeGenerator ng){
+		this.nodeGen = ng;
 	}
 }

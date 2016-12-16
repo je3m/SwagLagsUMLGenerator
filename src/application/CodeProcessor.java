@@ -15,9 +15,12 @@ public abstract class CodeProcessor {
 	public void setFile(File f) {
 		this.f = f;
 	}
-
 	public void setGenerator(IUmlGenerator u) {
 		this.u = u;
+	}
+
+	public void setNodeGenerator(INodeGenerator n){
+		this.g.setNodeGenerator(n);
 	}
 
 	public void setParser(IGraphReader gr) {
