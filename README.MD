@@ -1,5 +1,5 @@
 To run this program, you can use the command line:
-java Application <classnames> <arguments>
+java Application \<classnames\> \<arguments\>
 
 Command Line Arguments:
 * -r Recursively find inheritance and implement nodes
