@@ -8,16 +8,17 @@ import org.objectweb.asm.tree.MethodNode;
 
 import jdk.internal.org.objectweb.asm.Opcodes;
 
-public class GraphVisPublicMethodReader implements MethodReader{
+public class GraphVizPrivateMethodReader implements MethodReader {
 	@Override
 	public List<MethodNode> getMethods(ClassNode c) {
 		List<MethodNode> methods = c.methods;
 		List<MethodNode> returnMethods = new ArrayList<MethodNode>();
 		for(MethodNode method: methods){
-			if((method.access & Opcodes.ACC_PUBLIC) > 0){
+			if((method.access & Opcodes.ACC_PRIVATE) > 0){
 				returnMethods.add(method);
 			}
 		}
 		return returnMethods;
 	}
+
 }

@@ -38,16 +38,16 @@ public class AccessLevelArgumentProcessor extends CommandLineArgumentProcessorDe
 		}
 		CodeProcessor c = this.p.process(args);
 		if(isPrivate){
-			c.addFieldReader(new GraphVisPrivateFieldReader());
-			c.addMethodReader(new GraphVisPrivateMethodReader());
+			c.addFieldReader(new GraphVizPrivateFieldReader());
+			c.addMethodReader(new GraphVizPrivateMethodReader());
 		}
 		if(isProtected){
-			c.addFieldReader(new GraphVisProtectedFieldReader());
-			c.addMethodReader(new GraphVisProtectedMethodReader());
+			c.addFieldReader(new GraphVizProtectedFieldReader());
+			c.addMethodReader(new GraphVizProtectedMethodReader());
 		}
 		if(isPublic){
-			c.addFieldReader(new GraphVisPublicFieldReader());
-			c.addMethodReader(new GraphVisPublicMethodReader());
+			c.addFieldReader(new GraphVizPublicFieldReader());
+			c.addMethodReader(new GraphVizPublicMethodReader());
 		}
 		
 		return c;

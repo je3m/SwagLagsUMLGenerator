@@ -8,13 +8,13 @@ import org.objectweb.asm.tree.FieldNode;
 
 import jdk.internal.org.objectweb.asm.Opcodes;
 
-public class GraphVisProtectedFieldReader implements FieldReader{
+public class GraphVizPublicFieldReader implements FieldReader{
 	@Override
 	public List<FieldNode> getFields(ClassNode c) {
 		List<FieldNode> methods = c.fields;
 		List<FieldNode> returnMethods = new ArrayList<FieldNode>();
 		for(FieldNode method: methods){
-			if((method.access & Opcodes.ACC_PROTECTED) > 0){
+			if((method.access & Opcodes.ACC_PUBLIC) > 0){
 				returnMethods.add(method);
 			}
 		}
