@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>9</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>414</x>
-      <y>522</y>
-      <w>306</w>
-      <h>144</h>
+      <x>259</x>
+      <y>406</y>
+      <w>238</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>/Abstract/
 CommandLineArgumentProcessorDecorator
@@ -21,10 +21,10 @@ CommandLineArgumentProcessorDecorator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1224</x>
+      <x>889</x>
       <y>0</y>
-      <w>162</w>
-      <h>108</h>
+      <w>126</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Application
 --
@@ -34,10 +34,10 @@ CommandLineArgumentProcessorDecorator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>351</y>
-      <w>360</w>
-      <h>63</h>
+      <x>385</x>
+      <y>273</y>
+      <w>280</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 CommandLineProcessor
@@ -49,10 +49,10 @@ CommandLineProcessor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>405</y>
-      <w>108</w>
-      <h>135</h>
+      <x>364</x>
+      <y>315</y>
+      <w>84</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>100.0;10.0;10.0;130.0</additional_attributes>
@@ -60,10 +60,10 @@ CommandLineProcessor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>756</y>
-      <w>306</w>
-      <h>90</h>
+      <x>84</x>
+      <y>588</y>
+      <w>238</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>OutputFileCommandLineArgumentProcessorDecorator
 --
@@ -73,10 +73,10 @@ CommandLineProcessor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>378</x>
-      <y>657</y>
-      <w>81</w>
-      <h>117</h>
+      <x>231</x>
+      <y>511</y>
+      <w>63</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;110.0</additional_attributes>
@@ -84,10 +84,10 @@ CommandLineProcessor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>522</y>
-      <w>216</w>
-      <h>81</h>
+      <x>567</x>
+      <y>406</y>
+      <w>168</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>BasicCommandLineProcessor
 --</panel_attributes>
@@ -96,10 +96,10 @@ CommandLineProcessor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>819</x>
-      <y>405</y>
-      <w>108</w>
-      <h>135</h>
+      <x>574</x>
+      <y>315</y>
+      <w>84</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;130.0</additional_attributes>
@@ -107,10 +107,10 @@ CommandLineProcessor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2700</x>
-      <y>558</y>
-      <w>252</w>
-      <h>117</h>
+      <x>2037</x>
+      <y>434</y>
+      <w>196</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 IUmlGenerator
@@ -121,10 +121,10 @@ IUmlGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2700</x>
-      <y>747</y>
-      <w>252</w>
-      <h>117</h>
+      <x>2037</x>
+      <y>581</y>
+      <w>196</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>GraphVizGenerator
 --
@@ -134,10 +134,10 @@ IUmlGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2403</x>
-      <y>783</y>
-      <w>180</w>
-      <h>117</h>
+      <x>1806</x>
+      <y>609</y>
+      <w>140</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>GraphVizCodeProcessor
 --
@@ -151,10 +151,10 @@ IUmlGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1935</x>
-      <y>162</y>
-      <w>279</w>
-      <h>252</h>
+      <x>1442</x>
+      <y>126</y>
+      <w>217</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 CodeProcessor
@@ -174,10 +174,10 @@ CodeProcessor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1467</x>
-      <y>936</y>
-      <w>198</w>
-      <h>153</h>
+      <x>1078</x>
+      <y>728</y>
+      <w>154</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>ProgramGraph
 --
@@ -195,10 +195,10 @@ CodeProcessor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1242</x>
-      <y>1107</y>
-      <w>216</w>
-      <h>126</h>
+      <x>903</x>
+      <y>861</y>
+      <w>168</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 IEdge
@@ -214,10 +214,10 @@ IEdge
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1233</x>
-      <y>1287</y>
-      <w>108</w>
-      <h>54</h>
+      <x>742</x>
+      <y>1008</y>
+      <w>84</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>ExtendsEdge
 --
@@ -227,21 +227,21 @@ IEdge
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1278</x>
-      <y>1224</y>
-      <w>27</w>
-      <h>81</h>
+      <x>777</x>
+      <y>952</y>
+      <w>147</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>190.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2034</x>
-      <y>927</y>
-      <w>234</w>
-      <h>117</h>
+      <x>1519</x>
+      <y>721</y>
+      <w>182</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>GraphVizGraphReader
 --
@@ -251,10 +251,10 @@ IEdge
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2025</x>
-      <y>747</y>
-      <w>243</w>
-      <h>117</h>
+      <x>1512</x>
+      <y>581</y>
+      <w>189</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 IGraphReader
@@ -270,12 +270,16 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1476</x>
-      <y>693</y>
-      <w>252</w>
-      <h>144</h>
+      <x>1085</x>
+      <y>539</y>
+      <w>196</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>GraphBuilder
+--
+- INodeGenerator nodeGenerator
+- ArrayList&lt;IEdgeGenerator&gt; edgeGenerators
+- ArrayList&lt;IEdgeChecker&gt; edgeGenerators
 --
 + build(String[] classes) : ProgramGraph
 </panel_attributes>
@@ -284,10 +288,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2817</x>
-      <y>666</y>
-      <w>27</w>
-      <h>99</h>
+      <x>2128</x>
+      <y>518</y>
+      <w>21</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
@@ -295,10 +299,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2133</x>
-      <y>855</y>
-      <w>27</w>
-      <h>90</h>
+      <x>1596</x>
+      <y>665</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -306,10 +310,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1314</x>
-      <y>1008</y>
-      <w>171</w>
-      <h>117</h>
+      <x>959</x>
+      <y>784</y>
+      <w>133</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;170.0;10.0</additional_attributes>
@@ -317,10 +321,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1548</x>
-      <y>828</y>
-      <w>27</w>
-      <h>126</h>
+      <x>1141</x>
+      <y>644</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
@@ -328,10 +332,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2115</x>
-      <y>405</y>
-      <w>396</w>
-      <h>396</h>
+      <x>1582</x>
+      <y>315</y>
+      <w>308</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;420.0;420.0</additional_attributes>
@@ -339,10 +343,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1854</x>
-      <y>405</y>
-      <w>180</w>
-      <h>117</h>
+      <x>1379</x>
+      <y>315</y>
+      <w>140</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;180.0;10.0</additional_attributes>
@@ -350,10 +354,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2070</x>
-      <y>405</y>
-      <w>36</w>
-      <h>360</h>
+      <x>1547</x>
+      <y>315</y>
+      <w>28</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;380.0;20.0;10.0</additional_attributes>
@@ -361,10 +365,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2205</x>
-      <y>387</y>
-      <w>513</w>
-      <h>216</h>
+      <x>1652</x>
+      <y>301</y>
+      <w>399</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>550.0;220.0;10.0;10.0</additional_attributes>
@@ -372,10 +376,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2259</x>
-      <y>864</y>
-      <w>162</w>
-      <h>126</h>
+      <x>1694</x>
+      <y>672</y>
+      <w>126</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;120.0;160.0;10.0</additional_attributes>
@@ -383,10 +387,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2574</x>
-      <y>792</y>
-      <w>144</w>
-      <h>63</h>
+      <x>1939</x>
+      <y>616</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;50.0</additional_attributes>
@@ -394,10 +398,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>72</y>
-      <w>558</w>
-      <h>297</h>
+      <x>469</x>
+      <y>56</y>
+      <w>434</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;310.0;600.0;10.0</additional_attributes>
@@ -405,10 +409,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1377</x>
-      <y>45</y>
-      <w>576</w>
-      <h>135</h>
+      <x>1008</x>
+      <y>35</y>
+      <w>448</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>620.0;130.0;10.0;10.0</additional_attributes>
@@ -416,10 +420,10 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1665</x>
-      <y>504</y>
-      <w>252</w>
-      <h>144</h>
+      <x>1232</x>
+      <y>392</y>
+      <w>196</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 IGraphBuilder
@@ -431,10 +435,10 @@ IGraphBuilder
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1593</x>
-      <y>639</y>
-      <w>108</w>
-      <h>72</h>
+      <x>1176</x>
+      <y>497</y>
+      <w>84</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>100.0;10.0;10.0;60.0</additional_attributes>
@@ -442,10 +446,10 @@ IGraphBuilder
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1368</x>
-      <y>1287</y>
-      <w>108</w>
-      <h>54</h>
+      <x>847</x>
+      <y>1008</y>
+      <w>84</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>ImplementsEdge
 --
@@ -455,21 +459,21 @@ IGraphBuilder
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1413</x>
-      <y>1224</y>
-      <w>27</w>
-      <h>81</h>
+      <x>882</x>
+      <y>952</y>
+      <w>63</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>70.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1674</x>
-      <y>1107</y>
-      <w>261</w>
-      <h>117</h>
+      <x>1239</x>
+      <y>861</y>
+      <w>203</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 INodeGenerator
@@ -480,10 +484,10 @@ INodeGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1575</x>
-      <y>1260</y>
-      <w>180</w>
-      <h>117</h>
+      <x>1190</x>
+      <y>980</y>
+      <w>119</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>BasicNodeGenerator
 --
@@ -493,10 +497,10 @@ INodeGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1782</x>
-      <y>1260</y>
-      <w>180</w>
-      <h>117</h>
+      <x>1323</x>
+      <y>980</y>
+      <w>126</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>RecursiveNodeGenerator
 --
@@ -506,32 +510,32 @@ INodeGenerator
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1773</x>
-      <y>1215</y>
-      <w>126</w>
-      <h>63</h>
+      <x>1379</x>
+      <y>945</y>
+      <w>35</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;30.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1656</x>
-      <y>1215</y>
-      <w>81</w>
-      <h>63</h>
+      <x>1253</x>
+      <y>945</y>
+      <w>35</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>30.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1638</x>
-      <y>828</y>
-      <w>135</w>
-      <h>297</h>
+      <x>1211</x>
+      <y>644</y>
+      <w>105</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>130.0;310.0;10.0;10.0</additional_attributes>
@@ -539,10 +543,10 @@ INodeGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>855</y>
-      <w>261</w>
-      <h>90</h>
+      <x>273</x>
+      <y>665</y>
+      <w>203</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>RecursionArgumentProcessor
 --
@@ -552,10 +556,10 @@ INodeGenerator
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>657</y>
-      <w>27</w>
-      <h>216</h>
+      <x>364</x>
+      <y>511</y>
+      <w>21</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
@@ -563,10 +567,10 @@ INodeGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2538</x>
-      <y>1359</y>
-      <w>216</w>
-      <h>63</h>
+      <x>1911</x>
+      <y>1057</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>GraphVizPublicMethodReader
 --</panel_attributes>
@@ -575,10 +579,10 @@ INodeGenerator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2313</x>
-      <y>1143</y>
-      <w>288</w>
-      <h>117</h>
+      <x>1736</x>
+      <y>889</y>
+      <w>224</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 MethodReader
@@ -589,10 +593,10 @@ MethodReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2052</x>
-      <y>1359</y>
-      <w>216</w>
-      <h>63</h>
+      <x>1533</x>
+      <y>1057</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>GraphVizPrivateMethodReader
 --</panel_attributes>
@@ -601,10 +605,10 @@ MethodReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2295</x>
-      <y>1359</y>
-      <w>216</w>
-      <h>63</h>
+      <x>1722</x>
+      <y>1057</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>GraphVizProtectedMethodReader
 --</panel_attributes>
@@ -613,10 +617,10 @@ MethodReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2466</x>
-      <y>1251</y>
-      <w>189</w>
-      <h>126</h>
+      <x>1855</x>
+      <y>973</y>
+      <w>147</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;190.0;120.0</additional_attributes>
@@ -624,10 +628,10 @@ MethodReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2178</x>
-      <y>1251</y>
-      <w>189</w>
-      <h>126</h>
+      <x>1631</x>
+      <y>973</y>
+      <w>147</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>190.0;10.0;10.0;120.0</additional_attributes>
@@ -635,10 +639,10 @@ MethodReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2412</x>
-      <y>1251</y>
-      <w>27</w>
-      <h>126</h>
+      <x>1813</x>
+      <y>973</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -646,10 +650,10 @@ MethodReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2205</x>
-      <y>1035</y>
-      <w>216</w>
-      <h>126</h>
+      <x>1652</x>
+      <y>805</y>
+      <w>168</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>220.0;120.0;10.0;10.0</additional_attributes>
@@ -657,10 +661,10 @@ MethodReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3267</x>
-      <y>1368</y>
-      <w>216</w>
-      <h>63</h>
+      <x>2478</x>
+      <y>1064</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>GraphVizPublicFieldReader
 --</panel_attributes>
@@ -669,24 +673,24 @@ MethodReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3042</x>
-      <y>1152</y>
-      <w>180</w>
-      <h>117</h>
+      <x>2303</x>
+      <y>896</y>
+      <w>154</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 FieldReader
 --
-+ getFields(ClassNode c) : </panel_attributes>
++ getFields(ClassNode c) : List&lt;FieldNode&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2781</x>
-      <y>1368</y>
-      <w>216</w>
-      <h>63</h>
+      <x>2100</x>
+      <y>1064</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>GraphVizPrivateFieldReader
 --</panel_attributes>
@@ -695,10 +699,10 @@ FieldReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3024</x>
-      <y>1368</y>
-      <w>216</w>
-      <h>63</h>
+      <x>2289</x>
+      <y>1064</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>GraphVizProtectedFieldReader
 --</panel_attributes>
@@ -707,10 +711,10 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3195</x>
-      <y>1260</y>
-      <w>189</w>
-      <h>126</h>
+      <x>2422</x>
+      <y>980</y>
+      <w>147</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;190.0;120.0</additional_attributes>
@@ -718,10 +722,10 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2907</x>
-      <y>1260</y>
-      <w>189</w>
-      <h>126</h>
+      <x>2198</x>
+      <y>980</y>
+      <w>147</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>190.0;10.0;10.0;120.0</additional_attributes>
@@ -729,10 +733,10 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3141</x>
-      <y>1260</y>
-      <w>27</w>
-      <h>126</h>
+      <x>2380</x>
+      <y>980</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -740,10 +744,10 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2259</x>
-      <y>1017</y>
-      <w>891</w>
-      <h>153</h>
+      <x>1694</x>
+      <y>791</y>
+      <w>693</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>970.0;150.0;10.0;10.0</additional_attributes>
@@ -751,10 +755,10 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>657</y>
-      <w>135</w>
-      <h>117</h>
+      <x>469</x>
+      <y>511</y>
+      <w>105</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;130.0;110.0</additional_attributes>
@@ -762,10 +766,10 @@ FieldReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>774</x>
-      <y>756</y>
-      <w>261</w>
-      <h>90</h>
+      <x>539</x>
+      <y>588</y>
+      <w>203</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>AccessLevelArgumentProcessor
 --
@@ -775,12 +779,399 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1656</x>
-      <y>783</y>
-      <w>387</w>
-      <h>216</h>
+      <x>1225</x>
+      <y>609</y>
+      <w>301</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;220.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>1008</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>AssociationEdge
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>952</y>
+      <w>28</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1057</x>
+      <y>1008</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>DependencyEdge
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>952</y>
+      <w>63</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>742</y>
+      <w>203</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IEdgeGenerator
+--
++ generateEdge(ProgramGraph g) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>287</x>
+      <y>1078</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ImplementsEdgeGenerator
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>287</x>
+      <y>882</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>ExtendsEdgeGenerator
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>287</x>
+      <y>945</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>AssociationEdgeGenerator
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>287</x>
+      <y>1008</y>
+      <w>119</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>DependencyEdgeGenerator
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>826</y>
+      <w>126</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>826</y>
+      <w>147</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>826</y>
+      <w>168</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>602</y>
+      <w>497</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;200.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2905</x>
+      <y>889</y>
+      <w>224</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IEdgeReader
+--
++ getEdges(ArrayList&lt;IEdge&gt;) : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3080</x>
+      <y>973</y>
+      <w>119</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2793</x>
+      <y>973</y>
+      <w>154</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3024</x>
+      <y>973</y>
+      <w>28</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1694</x>
+      <y>770</y>
+      <w>1281</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1810.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>455</x>
+      <y>1127</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>AssociationDependencyChecker
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>952</y>
+      <w>91</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2744</x>
+      <y>1057</y>
+      <w>105</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>ExtendsEdgeReader
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2856</x>
+      <y>1057</y>
+      <w>119</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>ImplementsEdgeReader
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2982</x>
+      <y>1057</y>
+      <w>126</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>AssociationEdgeReader
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3115</x>
+      <y>1057</y>
+      <w>133</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>DependencyEdgeReader
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2898</x>
+      <y>973</y>
+      <w>77</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1015</x>
+      <y>1085</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>BidirectionalEdge
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>952</y>
+      <w>28</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>1127</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>BidirectionalEdgeChecker
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>707</x>
+      <y>952</y>
+      <w>28</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>581</x>
+      <y>868</y>
+      <w>203</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IEdgeChecker
+--
++ fixEdges(ProgramGraph g) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>826</y>
+      <w>105</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>623</y>
+      <w>385</w>
+      <h>259</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;350.0;530.0;10.0</additional_attributes>
   </element>
 </diagram>
