@@ -3,6 +3,10 @@ package application;
 public class BasicCommandLineProcessor extends CommandLineProcessor {
 	@Override
 	public CodeProcessor process(String[] args) {
-		return new GraphVizCodeProcessor(args);
+		GraphVizCodeProcessor tmp = new GraphVizCodeProcessor(args);
+		tmp.addEdgeGenerator(new ExtendsEdgeGenerator());
+		tmp.addEdgeGenerator(new ImplementsEdgeGenerator());
+
+		return tmp;
 	}
 }

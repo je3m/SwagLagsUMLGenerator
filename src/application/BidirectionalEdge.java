@@ -6,7 +6,6 @@ public class BidirectionalEdge extends Edge {
 
 	public BidirectionalEdge(ClassNode head, ClassNode tail) {
 		super(head, tail);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

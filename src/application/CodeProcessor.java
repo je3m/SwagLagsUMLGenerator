@@ -10,25 +10,29 @@ public abstract class CodeProcessor {
 	protected File f;
 	protected String[] classes;
 
+	public void addEdgeGenerator(IEdgeGenerator gen){
+		this.g.addEdgeGenerator(gen);
+	}
+
+	public void addFieldReader(FieldReader r){
+		this.gr.addFieldReader(r);
+	}
+	public void addMethodReader(MethodReader r){
+		this.gr.addMethodReader(r);
+	}
+
 	public abstract void process() throws IOException;
 
 	public void setFile(File f) {
 		this.f = f;
 	}
+
 	public void setGenerator(IUmlGenerator u) {
 		this.u = u;
 	}
 
 	public void setNodeGenerator(INodeGenerator n){
 		this.g.setNodeGenerator(n);
-	}
-	
-	public void addMethodReader(MethodReader r){
-		this.gr.addMethodReader(r);
-	}
-
-	public void addFieldReader(FieldReader r){
-		this.gr.addFieldReader(r);
 	}
 	public void setParser(IGraphReader gr) {
 		this.gr = gr;

@@ -1,11 +1,15 @@
 package application;
 import java.io.IOException;
-
-import org.objectweb.asm.tree.ClassNode;
+import java.util.ArrayList;
 
 
 public class GraphBuilder implements IGraphBuilder{
-	INodeGenerator nodeGen = new BasicNodeGenerator();
+	private INodeGenerator nodeGen = new BasicNodeGenerator();
+	private ArrayList<IEdgeGenerator> edgeGens = new ArrayList<IEdgeGenerator>();
+
+	public void addEdgeGenerator(IEdgeGenerator gen){
+		this.edgeGens.add(gen);
+	}
 
 	@Override
 	public ProgramGraph build(String[] classes) throws IOException {
@@ -16,18 +20,10 @@ public class GraphBuilder implements IGraphBuilder{
 
 		return pg;
 	}
-
 	private void generateEdges(ProgramGraph pg) {
-		for(ClassNode node: pg.getNodes()){
-			for(ClassNode other: pg.getNodes()){
-				if((node.superName != null) && node.superName.equals(other.name)){
-					Edge e = new ExtendsEdge(other, node);
-					pg.addEdge(e);
-				} else if((node.interfaces != null) && node.interfaces.contains(other.name)){
-					Edge e = new ImplementsEdge(other, node);
-					pg.addEdge(e);
-				}
-			}
+		//The pinnacle of efficiency
+		for(IEdgeGenerator gen : this.edgeGens) {
+			gen.generateEdge(pg);
 		}
 	}
 
