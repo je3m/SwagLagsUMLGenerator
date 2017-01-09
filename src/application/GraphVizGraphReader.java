@@ -13,6 +13,7 @@ import jdk.internal.org.objectweb.asm.Opcodes;
 public class GraphVizGraphReader implements IGraphReader {
 	ArrayList<FieldReader> fieldReaders = new ArrayList<FieldReader>();
 	ArrayList<MethodReader> methodReaders = new ArrayList<MethodReader>();
+	ArrayList<IEdgeReader> edgeReaders = new ArrayList<IEdgeReader>();
 
 	public void addMethodReader(MethodReader r){
 		this.methodReaders.add(r);
@@ -22,11 +23,15 @@ public class GraphVizGraphReader implements IGraphReader {
 		this.fieldReaders.add(r);
 	}
 	
-	private String getClassName(String s){
+	public void addEdgeReader(IEdgeReader r){
+		this.edgeReaders.add(r);
+	}
+	
+	public static String getClassName(String s){
 		return s.substring(s.lastIndexOf('/') + 1);
 	}
 
-	private String getClassName(Type t) {
+	public static String getClassName(Type t) {
 		String[] temp = t.getClassName().split("(\\.|\\/)");
 
 		return temp[temp.length - 1];
@@ -115,17 +120,8 @@ public class GraphVizGraphReader implements IGraphReader {
 
 		}
 
-		for(Edge e :g.getEdges()){
-			code += this.getClassName(e.getTail().name);
-			code += " -> ";
-			code += this.getClassName(e.getHead().name);
-			if(e.getDescription().equals("extends")){
-				code += " [arrowhead=\"onormal\", style=\"solid\"];\n";
-			} else if (e.getDescription().equals("implements")){
-				code += " [arrowhead=\"onormal\", style=\"dashed\"];\n";
-			} else {
-				throw new IllegalArgumentException();
-			}
+		for(IEdgeReader edgeReader : edgeReaders){
+			code += edgeReader.getEdges(g.getEdges());
 		}
 
 		code += "\n}";

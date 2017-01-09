@@ -6,6 +6,9 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 		GraphVizCodeProcessor tmp = new GraphVizCodeProcessor(args);
 		tmp.addEdgeGenerator(new ExtendsEdgeGenerator());
 		tmp.addEdgeGenerator(new ImplementsEdgeGenerator());
+		
+		tmp.addEdgeReader(new ExtendsEdgeReader());
+		tmp.addEdgeReader(new ImplementsEdgeReader());
 
 		return tmp;
 	}

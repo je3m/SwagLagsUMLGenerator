@@ -16,8 +16,6 @@ public class GraphVizCodeProcessor extends CodeProcessor{
 		ProgramGraph g = this.g.build(this.classes);
 		String dotCode = this.gr.parse(g);
 		this.u.writeFile(this.f, dotCode);
-
-
 	}
 
 }

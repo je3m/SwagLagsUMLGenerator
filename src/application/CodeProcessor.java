@@ -20,6 +20,9 @@ public abstract class CodeProcessor {
 	public void addMethodReader(MethodReader r){
 		this.gr.addMethodReader(r);
 	}
+	public void addEdgeReader(IEdgeReader r){
+		this.gr.addEdgeReader(r);
+	}
 
 	public abstract void process() throws IOException;
 
