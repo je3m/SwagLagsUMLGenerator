@@ -6,7 +6,7 @@ import java.io.IOException;
 public abstract class CodeProcessor {
 	protected IGraphReader gr;
 	protected IUmlGenerator u;
-	protected GraphBuilder g;
+	protected IGraphBuilder g;
 	protected File f;
 	protected String[] classes;
 

@@ -10,6 +10,7 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 
 		tmp.addEdgeReader(new ExtendsEdgeReader());
 		tmp.addEdgeReader(new ImplementsEdgeReader());
+		tmp.addEdgeReader(new AssociationEdgeReader());
 
 		return tmp;
 	}
