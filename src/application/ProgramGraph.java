@@ -1,15 +1,16 @@
 package application;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.objectweb.asm.tree.ClassNode;
 
 public class ProgramGraph {
 	private ArrayList<ClassNode> c;
-	private ArrayList<Edge> e;
+	private HashSet<Edge> e;
 
 	public ProgramGraph(){
 		this.c = new ArrayList<ClassNode>();
-		this.e = new ArrayList<Edge>();
+		this.e = new HashSet<Edge>();
 	}
 
 	public void addEdge(Edge e){
@@ -21,8 +22,10 @@ public class ProgramGraph {
 	}
 
 	public ArrayList<Edge> getEdges(){
-		return this.e;
+		ArrayList<Edge> memes = new ArrayList<>(this.e);
+		return memes;
 	}
+
 
 	public ArrayList<ClassNode> getNodes(){
 		return this.c;
