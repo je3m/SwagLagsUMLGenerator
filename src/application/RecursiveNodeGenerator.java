@@ -11,6 +11,7 @@ public class RecursiveNodeGenerator implements INodeGenerator {
 
 	@Override
 	public void generateNodes(ProgramGraph pg, String[] classes) throws IOException {
+		this.visited.add("java/lang/Object");
 		for(String s : classes) {
 			this.readClass(s, pg);
 		}
