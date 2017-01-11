@@ -9,11 +9,13 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 		tmp.addEdgeGenerator(new AssociationEdgeGenerator());
 		tmp.addEdgeGenerator(new DependencyEdgeGenerator());
 
+
 		tmp.addEdgeReader(new ExtendsEdgeReader());
 		tmp.addEdgeReader(new ImplementsEdgeReader());
 		tmp.addEdgeReader(new AssociationEdgeReader());
 		tmp.addEdgeReader(new DependencyEdgeReader());
 
+		tmp.addEdgeChecker(new AssociationDependencyChecker());
 
 		return tmp;
 	}

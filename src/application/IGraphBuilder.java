@@ -2,9 +2,11 @@ package application;
 import java.io.IOException;
 
 public interface IGraphBuilder {
-	public ProgramGraph build(String[] classes) throws IOException;
+	public void addEdgeChecker(IEdgeChecker ec);
 
 	public void addEdgeGenerator(IEdgeGenerator gen);
 
-	public void setNodeGenerator(INodeGenerator n);
+	public ProgramGraph build(String[] classes) throws IOException;
+
+	public void setNodeGenerator(INodeGenerator n);;
 }

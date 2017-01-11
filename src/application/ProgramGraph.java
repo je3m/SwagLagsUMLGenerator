@@ -26,8 +26,12 @@ public class ProgramGraph {
 		return memes;
 	}
 
-
 	public ArrayList<ClassNode> getNodes(){
 		return this.c;
+	}
+
+
+	public void removeEdge(Edge e){
+		this.e.remove(e);
 	}
 }
