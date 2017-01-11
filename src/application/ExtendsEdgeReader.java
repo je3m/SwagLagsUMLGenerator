@@ -9,9 +9,9 @@ public class ExtendsEdgeReader implements IEdgeReader {
 		String code = "";
 		for(Edge e : edges){
 			if(e.getDescription().equals("extends")){
-				code += GraphVizGraphReader.getClassName(e.getTail().name);
+				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";
-				code += GraphVizGraphReader.getClassName(e.getHead().name);
+				code += Utilities.getClassName(e.getHead().name);
 				code += " [arrowhead=\"onormal\", style=\"solid\"];\n";
 			}
 		}

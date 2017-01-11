@@ -15,28 +15,21 @@ public class GraphVizGraphReader implements IGraphReader {
 	ArrayList<MethodReader> methodReaders = new ArrayList<MethodReader>();
 	ArrayList<IEdgeReader> edgeReaders = new ArrayList<IEdgeReader>();
 
-	public void addMethodReader(MethodReader r){
-		this.methodReaders.add(r);
-	}
-	
-	public void addFieldReader(FieldReader r){
-		this.fieldReaders.add(r);
-	}
-	
+	@Override
 	public void addEdgeReader(IEdgeReader r){
 		this.edgeReaders.add(r);
 	}
-	
-	public static String getClassName(String s){
-		return s.substring(s.lastIndexOf('/') + 1);
+
+	@Override
+	public void addFieldReader(FieldReader r){
+		this.fieldReaders.add(r);
 	}
 
-	public static String getClassName(Type t) {
-		String[] temp = t.getClassName().split("(\\.|\\/)");
-
-		return temp[temp.length - 1];
-
+	@Override
+	public void addMethodReader(MethodReader r){
+		this.methodReaders.add(r);
 	}
+
 
 	@Override
 	public String parse(ProgramGraph g) {
@@ -46,7 +39,7 @@ public class GraphVizGraphReader implements IGraphReader {
 
 		for(ClassNode c : g.getNodes()) {
 			c.name = c.name.replaceAll("\\$", "_");
-			code += this.getClassName(c.name) + " [\n";
+			code += Utilities.getClassName(c.name) + " [\n";
 			code += "shape =\"record\",\n";
 			code += "label = \"{";
 			if((Opcodes.ACC_INTERFACE & c.access) != 0){
@@ -56,9 +49,9 @@ public class GraphVizGraphReader implements IGraphReader {
 				//is an interface
 				code += "\\<\\<abstract\\>\\>\\n";
 			}
-			code += this.getClassName(c.name) + "|";
+			code += Utilities.getClassName(c.name) + "|";
 			List<FieldNode> fields = new ArrayList<FieldNode>();
-			for(FieldReader r: fieldReaders){
+			for(FieldReader r: this.fieldReaders){
 				for(FieldNode n : r.getFields(c)){
 					fields.add(n);
 				}
@@ -74,11 +67,11 @@ public class GraphVizGraphReader implements IGraphReader {
 				if ((field.access & Opcodes.ACC_STATIC) > 0){
 					code += "static ";
 				}
-				code+= field.name + " : " + this.getClassName(Type.getType(field.desc))+ "\\l";
-			}
-			code += "|";
-			List<MethodNode> methods = new ArrayList<MethodNode>();
-			for(MethodReader r: methodReaders){
+				code+= field.name + " : " + Utilities.getClassName(Type.getType(field.desc))+ "\\l";
+			}	//
+			code += "|";	//
+			List<MethodNode> methods = new ArrayList<MethodNode>();	//
+			for(MethodReader r: this.methodReaders){
 				for(MethodNode n : r.getMethods(c)){
 					methods.add(n);
 				}
@@ -99,28 +92,28 @@ public class GraphVizGraphReader implements IGraphReader {
 				String methodName = method.name;
 				if(methodName.equals("<init>")){
 					//Replace with class name if it is a constructor
-					methodName = this.getClassName(c.name);
+					methodName = Utilities.getClassName(c.name);
 				} else if (methodName.equals("<clinit>")){
-					methodName = this.getClassName(c.name);
+					methodName = Utilities.getClassName(c.name);
 				}
 				code+= " " + methodName +  "(";
 				boolean hasArgs = false;
 				for(Type argType : Type.getArgumentTypes(method.desc)){
 					hasArgs = true;
-					code += this.getClassName(argType) + ", ";
+					code += Utilities.getClassName(argType) + ", ";
 				}
 				if(hasArgs) {
 					code = code.substring(0, code.length() - 2);
 				}
 
-				code += ") : " + this.getClassName(Type.getReturnType(method.desc)) + "\\l";
+				code += ") : " + Utilities.getClassName(Type.getReturnType(method.desc)) + "\\l";
 			}
 
 			code += "}\"];\n";
 
 		}
 
-		for(IEdgeReader edgeReader : edgeReaders){
+		for(IEdgeReader edgeReader : this.edgeReaders){
 			code += edgeReader.getEdges(g.getEdges());
 		}
 
