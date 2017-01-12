@@ -16,7 +16,7 @@ public class AssociationEdgeReader implements IEdgeReader{
 				code += " [arrowhead=\"ovee\", style=\"solid\"";
 
 				if(e.getDescription().contains("many")){
-					code += ", label=\"1..m\"";
+					code += ", headlabel=\"1..m\", labeldistance=3";
 				}
 
 				code += "];\n";
