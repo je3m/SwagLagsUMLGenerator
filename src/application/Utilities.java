@@ -19,6 +19,6 @@ public class Utilities {
 			return null;
 		}
 
-		return t.getDescriptor().replace("L", "").replace(";", "").replace("[", "");
+		return t.getDescriptor().replaceFirst("L", "").replace(";", "").replace("[", "");
 	}
 }
