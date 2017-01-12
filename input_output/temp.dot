@@ -1,10 +1,158 @@
 digraph memes {rankdir=BT;
-String [
+RecursionArgumentProcessor [
 shape ="record",
-label = "{String|- value : char[]\l- hash : int\l- static serialVersionUID : long\l- static serialPersistentFields : ObjectStreamField[]\l+ static CASE_INSENSITIVE_ORDER : Comparator\l|+  String() : void\l+  String(String) : void\l+  String(char[]) : void\l+  String(char[], int, int) : void\l+  String(int[], int, int) : void\l+  String(byte[], int, int, int) : void\l+  String(byte[], int) : void\l- static  checkBounds(byte[], int, int) : void\l+  String(byte[], int, int, String) : void\l+  String(byte[], int, int, Charset) : void\l+  String(byte[], String) : void\l+  String(byte[], Charset) : void\l+  String(byte[], int, int) : void\l+  String(byte[]) : void\l+  String(StringBuffer) : void\l+  String(StringBuilder) : void\l String(char[], boolean) : void\l+  length() : int\l+  isEmpty() : boolean\l+  charAt(int) : char\l+  codePointAt(int) : int\l+  codePointBefore(int) : int\l+  codePointCount(int, int) : int\l+  offsetByCodePoints(int, int) : int\l getChars(char[], int) : void\l+  getChars(int, int, char[], int) : void\l+  getBytes(int, int, byte[], int) : void\l+  getBytes(String) : byte[]\l+  getBytes(Charset) : byte[]\l+  getBytes() : byte[]\l+  equals(Object) : boolean\l+  contentEquals(StringBuffer) : boolean\l-  nonSyncContentEquals(AbstractStringBuilder) : boolean\l+  contentEquals(CharSequence) : boolean\l+  equalsIgnoreCase(String) : boolean\l+  compareTo(String) : int\l+  compareToIgnoreCase(String) : int\l+  regionMatches(int, String, int, int) : boolean\l+  regionMatches(boolean, int, String, int, int) : boolean\l+  startsWith(String, int) : boolean\l+  startsWith(String) : boolean\l+  endsWith(String) : boolean\l+  hashCode() : int\l+  indexOf(int) : int\l+  indexOf(int, int) : int\l-  indexOfSupplementary(int, int) : int\l+  lastIndexOf(int) : int\l+  lastIndexOf(int, int) : int\l-  lastIndexOfSupplementary(int, int) : int\l+  indexOf(String) : int\l+  indexOf(String, int) : int\lstatic  indexOf(char[], int, int, String, int) : int\lstatic  indexOf(char[], int, int, char[], int, int, int) : int\l+  lastIndexOf(String) : int\l+  lastIndexOf(String, int) : int\lstatic  lastIndexOf(char[], int, int, String, int) : int\lstatic  lastIndexOf(char[], int, int, char[], int, int, int) : int\l+  substring(int) : String\l+  substring(int, int) : String\l+  subSequence(int, int) : CharSequence\l+  concat(String) : String\l+  replace(char, char) : String\l+  matches(String) : boolean\l+  contains(CharSequence) : boolean\l+  replaceFirst(String, String) : String\l+  replaceAll(String, String) : String\l+  replace(CharSequence, CharSequence) : String\l+  split(String, int) : String[]\l+  split(String) : String[]\l+ static  join(CharSequence, CharSequence[]) : String\l+ static  join(CharSequence, Iterable) : String\l+  toLowerCase(Locale) : String\l+  toLowerCase() : String\l+  toUpperCase(Locale) : String\l+  toUpperCase() : String\l+  trim() : String\l+  toString() : String\l+  toCharArray() : char[]\l+ static  format(String, Object[]) : String\l+ static  format(Locale, String, Object[]) : String\l+ static  valueOf(Object) : String\l+ static  valueOf(char[]) : String\l+ static  valueOf(char[], int, int) : String\l+ static  copyValueOf(char[], int, int) : String\l+ static  copyValueOf(char[]) : String\l+ static  valueOf(boolean) : String\l+ static  valueOf(char) : String\l+ static  valueOf(int) : String\l+ static  valueOf(long) : String\l+ static  valueOf(float) : String\l+ static  valueOf(double) : String\l+  intern() : String\l+  compareTo(Object) : int\lstatic  String() : void\l}"];
-Object [
+label = "{RecursionArgumentProcessor||+  process(String[]) : CodeProcessor\l}"];
+CommandLineArgumentProcessorDecorator [
 shape ="record",
-label = "{Object||+  Object() : void\l- static  registerNatives() : void\l+  getClass() : Class\l+  hashCode() : int\l+  equals(Object) : boolean\l#  clone() : Object\l+  toString() : String\l+  notify() : void\l+  notifyAll() : void\l+  wait(long) : void\l+  wait(long, int) : void\l+  wait() : void\l#  finalize() : void\lstatic  Object() : void\l}"];
-String -> Object [arrowhead="onormal", style="dashed"];
+label = "{\<\<abstract\>\>\nCommandLineArgumentProcessorDecorator|# p : CommandLineProcessor\l|#  removeIndex(String[], int) : String[]\l}"];
+CommandLineProcessor [
+shape ="record",
+label = "{\<\<abstract\>\>\nCommandLineProcessor||+  CommandLineProcessor() : void\l+  process(String[]) : CodeProcessor\l}"];
+OutputFileCommandLineArgumentProcessorDecorator [
+shape ="record",
+label = "{OutputFileCommandLineArgumentProcessorDecorator||+  process(String[]) : CodeProcessor\l}"];
+AccessLevelArgumentProcessor [
+shape ="record",
+label = "{AccessLevelArgumentProcessor||+  process(String[]) : CodeProcessor\l}"];
+BasicCommandLineProcessor [
+shape ="record",
+label = "{BasicCommandLineProcessor||+  BasicCommandLineProcessor() : void\l+  process(String[]) : CodeProcessor\l}"];
+ProgramGraph [
+shape ="record",
+label = "{ProgramGraph|- c : ArrayList\l- e : HashSet\l|+  ProgramGraph() : void\l+  addEdge(Edge) : void\l+  addNode(ClassNode) : void\l+  getEdges() : ArrayList\l+  getNodes() : ArrayList\l+  removeEdge(Edge) : void\l}"];
+BasicNodeGenerator [
+shape ="record",
+label = "{BasicNodeGenerator||-  readClass(String, ProgramGraph) : void\l+  BasicNodeGenerator() : void\l+  generateNodes(ProgramGraph, String[]) : void\l}"];
+INodeGenerator [
+shape ="record",
+label = "{\<\<interface\>\>\nINodeGenerator||+  generateNodes(ProgramGraph, String[]) : void\l}"];
+RecursiveNodeGenerator [
+shape ="record",
+label = "{RecursiveNodeGenerator||-  readClass(String, ProgramGraph) : void\l+  RecursiveNodeGenerator() : void\l+  generateNodes(ProgramGraph, String[]) : void\l}"];
+GraphBuilder [
+shape ="record",
+label = "{GraphBuilder|- nodeGen : INodeGenerator\l- edgeGens : ArrayList\l- edgeCheckers : ArrayList\l|-  checkEdges(ProgramGraph) : void\l-  generateEdges(ProgramGraph) : void\l-  generateNodes(ProgramGraph, String[]) : void\l+  GraphBuilder() : void\l+  addEdgeChecker(IEdgeChecker) : void\l+  addEdgeGenerator(IEdgeGenerator) : void\l+  build(String[]) : ProgramGraph\l+  setNodeGenerator(INodeGenerator) : void\l}"];
+IGraphBuilder [
+shape ="record",
+label = "{\<\<interface\>\>\nIGraphBuilder||+  addEdgeChecker(IEdgeChecker) : void\l+  addEdgeGenerator(IEdgeGenerator) : void\l+  build(String[]) : ProgramGraph\l+  setNodeGenerator(INodeGenerator) : void\l}"];
+GraphVizPrivateMethodReader [
+shape ="record",
+label = "{GraphVizPrivateMethodReader||+  GraphVizPrivateMethodReader() : void\l+  getMethods(ClassNode) : List\l}"];
+MethodReader [
+shape ="record",
+label = "{\<\<interface\>\>\nMethodReader||+  getMethods(ClassNode) : List\l}"];
+GraphVizProtectedMethodReader [
+shape ="record",
+label = "{GraphVizProtectedMethodReader||+  GraphVizProtectedMethodReader() : void\l+  getMethods(ClassNode) : List\l}"];
+GraphVizPublicMethodReader [
+shape ="record",
+label = "{GraphVizPublicMethodReader||+  GraphVizPublicMethodReader() : void\l+  getMethods(ClassNode) : List\l}"];
+GraphVizPrivateFieldReader [
+shape ="record",
+label = "{GraphVizPrivateFieldReader||+  GraphVizPrivateFieldReader() : void\l+  getFields(ClassNode) : List\l}"];
+FieldReader [
+shape ="record",
+label = "{\<\<interface\>\>\nFieldReader||+  getFields(ClassNode) : List\l}"];
+GraphVizProtectedFieldReader [
+shape ="record",
+label = "{GraphVizProtectedFieldReader||+  GraphVizProtectedFieldReader() : void\l+  getFields(ClassNode) : List\l}"];
+GraphVizPublicFieldReader [
+shape ="record",
+label = "{GraphVizPublicFieldReader||+  GraphVizPublicFieldReader() : void\l+  getFields(ClassNode) : List\l}"];
+GraphVizGraphReader [
+shape ="record",
+label = "{GraphVizGraphReader|- fieldReaders : ArrayList\l- methodReaders : ArrayList\l- edgeReaders : ArrayList\l|+  GraphVizGraphReader() : void\l+  addEdgeReader(IEdgeReader) : void\l+  addFieldReader(FieldReader) : void\l+  addMethodReader(MethodReader) : void\l+  parse(ProgramGraph) : String\l}"];
+IGraphReader [
+shape ="record",
+label = "{\<\<interface\>\>\nIGraphReader||+  parse(ProgramGraph) : String\l+  addMethodReader(MethodReader) : void\l+  addFieldReader(FieldReader) : void\l+  addEdgeReader(IEdgeReader) : void\l}"];
+GraphVizCodeProcessor [
+shape ="record",
+label = "{GraphVizCodeProcessor||+  GraphVizCodeProcessor(String[]) : void\l+  process() : void\l}"];
+CodeProcessor [
+shape ="record",
+label = "{\<\<abstract\>\>\nCodeProcessor|# gr : IGraphReader\l# u : IUmlGenerator\l# g : IGraphBuilder\l# f : File\l# classes : String[]\l|+  CodeProcessor() : void\l+  addEdgeChecker(IEdgeChecker) : void\l+  addEdgeGenerator(IEdgeGenerator) : void\l+  addEdgeReader(IEdgeReader) : void\l+  addFieldReader(FieldReader) : void\l+  addMethodReader(MethodReader) : void\l+  process() : void\l+  setFile(File) : void\l+  setGenerator(IUmlGenerator) : void\l+  setNodeGenerator(INodeGenerator) : void\l+  setParser(IGraphReader) : void\l}"];
+GraphVizGenerator [
+shape ="record",
+label = "{GraphVizGenerator||+  GraphVizGenerator() : void\l+  writeFile(File, String) : void\l}"];
+IUmlGenerator [
+shape ="record",
+label = "{\<\<interface\>\>\nIUmlGenerator||+  writeFile(File, String) : void\l}"];
+ExtendsEdgeGenerator [
+shape ="record",
+label = "{ExtendsEdgeGenerator||+  ExtendsEdgeGenerator() : void\l+  generateEdge(ProgramGraph) : void\l}"];
+IEdgeGenerator [
+shape ="record",
+label = "{\<\<interface\>\>\nIEdgeGenerator||+  generateEdge(ProgramGraph) : void\l}"];
+ExtendsEdgeReader [
+shape ="record",
+label = "{ExtendsEdgeReader||+  ExtendsEdgeReader() : void\l+  getEdges(ArrayList) : String\l}"];
+IEdgeReader [
+shape ="record",
+label = "{\<\<interface\>\>\nIEdgeReader||+  getEdges(ArrayList) : String\l}"];
+Application [
+shape ="record",
+label = "{Application||+  Application() : void\l+ static  main(String[]) : void\l}"];
+CommandLineArgumentProcessorDecorator -> CommandLineProcessor [arrowhead="onormal", style="solid"];
+BasicCommandLineProcessor -> CommandLineProcessor [arrowhead="onormal", style="solid"];
+AccessLevelArgumentProcessor -> CommandLineArgumentProcessorDecorator [arrowhead="onormal", style="solid"];
+RecursionArgumentProcessor -> CommandLineArgumentProcessorDecorator [arrowhead="onormal", style="solid"];
+GraphVizCodeProcessor -> CodeProcessor [arrowhead="onormal", style="solid"];
+OutputFileCommandLineArgumentProcessorDecorator -> CommandLineArgumentProcessorDecorator [arrowhead="onormal", style="solid"];
+GraphVizProtectedFieldReader -> FieldReader [arrowhead="onormal", style="dashed"];
+GraphVizGenerator -> IUmlGenerator [arrowhead="onormal", style="dashed"];
+GraphBuilder -> IGraphBuilder [arrowhead="onormal", style="dashed"];
+GraphVizPrivateMethodReader -> MethodReader [arrowhead="onormal", style="dashed"];
+GraphVizGraphReader -> IGraphReader [arrowhead="onormal", style="dashed"];
+RecursiveNodeGenerator -> INodeGenerator [arrowhead="onormal", style="dashed"];
+GraphVizProtectedMethodReader -> MethodReader [arrowhead="onormal", style="dashed"];
+GraphVizPublicMethodReader -> MethodReader [arrowhead="onormal", style="dashed"];
+ExtendsEdgeReader -> IEdgeReader [arrowhead="onormal", style="dashed"];
+GraphVizPublicFieldReader -> FieldReader [arrowhead="onormal", style="dashed"];
+GraphVizPrivateFieldReader -> FieldReader [arrowhead="onormal", style="dashed"];
+BasicNodeGenerator -> INodeGenerator [arrowhead="onormal", style="dashed"];
+ExtendsEdgeGenerator -> IEdgeGenerator [arrowhead="onormal", style="dashed"];
+GraphVizGraphReader -> IEdgeReader [arrowhead="ovee", style="solid", label="1..m"];
+CodeProcessor -> IGraphBuilder [arrowhead="ovee", style="solid"];
+GraphBuilder -> IEdgeGenerator [arrowhead="ovee", style="solid", label="1..m"];
+CodeProcessor -> IUmlGenerator [arrowhead="ovee", style="solid"];
+GraphVizGraphReader -> FieldReader [arrowhead="ovee", style="solid", label="1..m"];
+GraphBuilder -> INodeGenerator [arrowhead="ovee", style="solid"];
+GraphVizGraphReader -> MethodReader [arrowhead="ovee", style="solid", label="1..m"];
+CodeProcessor -> IGraphReader [arrowhead="ovee", style="solid"];
+CommandLineArgumentProcessorDecorator -> CommandLineProcessor [arrowhead="ovee", style="solid"];
+RecursionArgumentProcessor -> CodeProcessor [arrowhead="ovee", style="dashed"];
+IGraphReader -> IEdgeReader [arrowhead="ovee", style="dashed"];
+AccessLevelArgumentProcessor -> CodeProcessor [arrowhead="ovee", style="dashed"];
+IGraphReader -> ProgramGraph [arrowhead="ovee", style="dashed"];
+CodeProcessor -> IEdgeGenerator [arrowhead="ovee", style="dashed"];
+BasicCommandLineProcessor -> GraphVizCodeProcessor [arrowhead="ovee", style="dashed"];
+INodeGenerator -> ProgramGraph [arrowhead="ovee", style="dashed"];
+GraphVizGraphReader -> ProgramGraph [arrowhead="ovee", style="dashed"];
+RecursionArgumentProcessor -> CommandLineProcessor [arrowhead="ovee", style="dashed"];
+CodeProcessor -> IEdgeReader [arrowhead="ovee", style="dashed"];
+Application -> OutputFileCommandLineArgumentProcessorDecorator [arrowhead="ovee", style="dashed"];
+OutputFileCommandLineArgumentProcessorDecorator -> CommandLineProcessor [arrowhead="ovee", style="dashed"];
+BasicNodeGenerator -> ProgramGraph [arrowhead="ovee", style="dashed"];
+AccessLevelArgumentProcessor -> CommandLineProcessor [arrowhead="ovee", style="dashed"];
+Application -> CommandLineProcessor [arrowhead="ovee", style="dashed"];
+CodeProcessor -> INodeGenerator [arrowhead="ovee", style="dashed"];
+GraphVizCodeProcessor -> ProgramGraph [arrowhead="ovee", style="dashed"];
+IGraphBuilder -> ProgramGraph [arrowhead="ovee", style="dashed"];
+IEdgeGenerator -> ProgramGraph [arrowhead="ovee", style="dashed"];
+RecursiveNodeGenerator -> ProgramGraph [arrowhead="ovee", style="dashed"];
+IGraphBuilder -> INodeGenerator [arrowhead="ovee", style="dashed"];
+Application -> RecursionArgumentProcessor [arrowhead="ovee", style="dashed"];
+CommandLineProcessor -> CodeProcessor [arrowhead="ovee", style="dashed"];
+GraphBuilder -> ProgramGraph [arrowhead="ovee", style="dashed"];
+OutputFileCommandLineArgumentProcessorDecorator -> CodeProcessor [arrowhead="ovee", style="dashed"];
+IGraphReader -> FieldReader [arrowhead="ovee", style="dashed"];
+Application -> AccessLevelArgumentProcessor [arrowhead="ovee", style="dashed"];
+BasicCommandLineProcessor -> CodeProcessor [arrowhead="ovee", style="dashed"];
+IGraphReader -> MethodReader [arrowhead="ovee", style="dashed"];
+IGraphBuilder -> IEdgeGenerator [arrowhead="ovee", style="dashed"];
+Application -> CodeProcessor [arrowhead="ovee", style="dashed"];
+CodeProcessor -> FieldReader [arrowhead="ovee", style="dashed"];
+CodeProcessor -> MethodReader [arrowhead="ovee", style="dashed"];
+ExtendsEdgeGenerator -> ProgramGraph [arrowhead="ovee", style="dashed"];
 
 }

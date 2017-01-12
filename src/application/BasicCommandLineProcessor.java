@@ -8,7 +8,7 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 		tmp.addEdgeGenerator(new ImplementsEdgeGenerator());
 		tmp.addEdgeGenerator(new AssociationEdgeGenerator());
 		tmp.addEdgeGenerator(new DependencyEdgeGenerator());
-
+		tmp.addEdgeGenerator(new CodeDependencyEdgeGenerator());
 
 		tmp.addEdgeReader(new ExtendsEdgeReader());
 		tmp.addEdgeReader(new ImplementsEdgeReader());

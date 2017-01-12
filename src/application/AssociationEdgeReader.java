@@ -8,11 +8,18 @@ public class AssociationEdgeReader implements IEdgeReader{
 	public String getEdges(ArrayList<Edge> edges) {
 		String code = "";
 		for(Edge e : edges){
-			if(e.getDescription().equals("association")){
-				code += Utilities.getClassName(e.getHead().name);
-				code += " -> ";
+			if(e.getDescription().contains("association")){
+
 				code += Utilities.getClassName(e.getTail().name);
-				code += " [arrowhead=\"odiamond\", style=\"solid\"];\n";
+				code += " -> ";
+				code += Utilities.getClassName(e.getHead().name);
+				code += " [arrowhead=\"ovee\", style=\"solid\"";
+
+				if(e.getDescription().contains("many")){
+					code += ", label=\"1..m\"";
+				}
+
+				code += "];\n";
 			}
 		}
 		return code;

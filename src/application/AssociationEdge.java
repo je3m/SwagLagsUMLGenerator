@@ -4,15 +4,26 @@ import org.objectweb.asm.tree.ClassNode;
 
 public class AssociationEdge extends Edge {
 
+	private String manies = "";
+
 	public AssociationEdge(ClassNode head, ClassNode tail) {
 		super(head, tail);
-		// TODO Auto-generated constructor stub
+	}
+
+	public AssociationEdge(ClassNode head, ClassNode tail, boolean many) {
+		this(head,tail);
+		if(many) {
+			this.setManies();
+		}
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return "association";
+		return "association" + this.manies;
+	}
+
+	public void setManies(){
+		this.manies = "many";
 	}
 
 }

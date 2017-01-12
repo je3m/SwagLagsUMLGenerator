@@ -11,9 +11,9 @@ import org.objectweb.asm.tree.MethodNode;
 import jdk.internal.org.objectweb.asm.Opcodes;
 
 public class GraphVizGraphReader implements IGraphReader {
-	ArrayList<FieldReader> fieldReaders = new ArrayList<FieldReader>();
-	ArrayList<MethodReader> methodReaders = new ArrayList<MethodReader>();
-	ArrayList<IEdgeReader> edgeReaders = new ArrayList<IEdgeReader>();
+	private ArrayList<FieldReader> fieldReaders = new ArrayList<FieldReader>();
+	private ArrayList<MethodReader> methodReaders = new ArrayList<MethodReader>();
+	private ArrayList<IEdgeReader> edgeReaders = new ArrayList<IEdgeReader>();
 
 	@Override
 	public void addEdgeReader(IEdgeReader r){
