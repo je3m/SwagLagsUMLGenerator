@@ -3,15 +3,28 @@ package application;
 import org.objectweb.asm.tree.ClassNode;
 
 public class AssociationBidirectionalEdge extends Edge {
-
+	
+	//Notation is on the head
+	private String manyHead = "";
+	
+	//Notation is on the tail
+	private String manyTail = "";
+	
 	public AssociationBidirectionalEdge(ClassNode head, ClassNode tail) {
 		super(head, tail);
+	}
+	
+	public void setManyHead(){
+		manyHead = "manyH";
+	}
+	
+	public void setManyTail(){
+		manyTail = "manyT";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return "abidirectional"; //lgbtq friendly edge
+		return "abidirectional" + manyHead + manyTail; //lgbtq friendly edge
 	}
 
 }

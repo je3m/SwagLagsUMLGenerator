@@ -12,15 +12,30 @@ public class BidirectionalEdgeChecker implements IEdgeChecker{
 			for(Edge e2: g.getEdges()){
 				if(e1.getHead().equals(e2.getTail()) &&
 					e1.getTail().equals(e2.getHead())){
-					if(e1.getDescription().equals("association") &&
-							e2.getDescription().equals("association")){
-						if(!addEdges.contains(new AssociationBidirectionalEdge(e1.getTail(), e1.getHead()))){
+					if(e1.getDescription().contains("association") &&
+							e2.getDescription().contains("association")){
+						AssociationBidirectionalEdge testEdge = new AssociationBidirectionalEdge(e1.getTail(), e1.getHead());
+						if(e2.getDescription().contains("many")){
+							testEdge.setManyTail();
+						}
+						if(e1.getDescription().contains("many")){
+							testEdge.setManyHead();
+						}
+						if(!addEdges.contains(testEdge)){
 							removeEdges.add(e1);
 							removeEdges.add(e2);
-							addEdges.add(new AssociationBidirectionalEdge(e1.getHead(), e1.getTail()));
+							AssociationBidirectionalEdge newEdge = new AssociationBidirectionalEdge(e1.getHead(), e1.getTail());
+							if(e1.getDescription().contains("many")){
+								newEdge.setManyTail();
+							}
+							if(e2.getDescription().contains("many")){
+								newEdge.setManyHead();
+							}
+							
+							addEdges.add(newEdge);
 						}
-					} else if (e1.getDescription().equals("dependency") &&
-							e2.getDescription().equals("dependency")){
+					} else if (e1.getDescription().contains("dependency") &&
+							e2.getDescription().contains("dependency")){
 						if(!addEdges.contains(new DependencyBidirectionalEdge(e1.getTail(), e1.getHead()))){
 							removeEdges.add(e1);
 							removeEdges.add(e2);

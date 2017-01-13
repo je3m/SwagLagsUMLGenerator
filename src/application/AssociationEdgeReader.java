@@ -13,7 +13,7 @@ public class AssociationEdgeReader implements IEdgeReader{
 				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";
 				code += Utilities.getClassName(e.getHead().name);
-				code += " [arrowhead=\"ovee\", style=\"solid\"";
+				code += " [arrowhead=\"ovee\", arrowtail=\"ovee\", style=\"solid\"";
 
 				if(e.getDescription().contains("many")){
 					code += ", headlabel=\"1..m\", labeldistance=3";

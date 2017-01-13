@@ -11,7 +11,7 @@ public class DependencyBidirectionalEdgeReader implements IEdgeReader{
 				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";
 				code += Utilities.getClassName(e.getHead().name);
-				code += " [arrowhead=\"ovee\", style=\"dashed\", dir=\"both\"];\n";
+				code += " [arrowhead=\"ovee\", arrowtail=\"ovee\", style=\"dashed\", dir=\"both\"];\n";
 			}
 		}
 		return code;
