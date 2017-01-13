@@ -9,7 +9,7 @@ public class ImplementsEdgeGenerator implements IEdgeGenerator {
 		for(ClassNode node: pg.getNodes()){
 			for(ClassNode other: pg.getNodes()){
 				if((node.interfaces != null) && node.interfaces.contains(other.name)){
-					Edge e = new ImplementsEdge(other, node);
+					IEdge e = new ImplementsEdge(other, node);
 					pg.addEdge(e);
 				}
 			}

@@ -2,7 +2,7 @@ package application;
 
 import org.objectweb.asm.tree.ClassNode;
 
-public class AssociationBidirectionalEdge extends Edge {
+public class AssociationBidirectionalEdge extends IEdge {
 	
 	//Notation is on the head
 	private String manyHead = "";

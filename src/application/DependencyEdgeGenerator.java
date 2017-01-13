@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.objectweb.asm.Type;
@@ -17,13 +18,58 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 			for(ClassNode other: pg.getNodes()){
 				List<MethodNode> methods = node.methods;
 				for(MethodNode mn: methods) {
-					//					System.out.println(mn.desc);
+
+
+					//find one to many relationships with dependencies
+					if(mn.signature != null){
+						String argument = mn.signature.replace("(", "").split("\\)")[0];
+						String returnType = Utilities.getClassPath(mn.signature.replace("(", "").split("\\)")[1]);
+
+						//parsing some jank arguments
+						boolean split = true;
+						ArrayList<String> args = new ArrayList<String>();
+						args.add("");
+						for(int i = 0; i < argument.length(); i++){
+							if(argument.charAt(i) == '<'){
+								split = false;
+							} else if (argument.charAt(i) == '>'){
+								split = true;
+							} else if ((argument.charAt(i) == ';') && split){
+								args.add("");
+							}
+
+							if (!((argument.charAt(i) == ';') && split)) {
+								args.set(args.size() - 1, args.get(args.size()-1) +  argument.charAt(i));
+							}
+
+
+						}
+
+						//checking though parameters for array lists contents
+						for (String s : args){
+							if(!s.equals("") && s.contains("<")){
+
+								for (String sn : Utilities.getGenericTypes(s)){
+
+									if(Utilities.getClassPath(sn).equals(Utilities.getClassPath(other.name))) {
+										pg.addEdge(new DependencyEdge(other, node, true));
+									}
+								}
+
+							}
+
+						}
+
+						if(returnType.contains("<")){
+							for (String s : Utilities.getGenericTypes(returnType)) {
+								if(Utilities.getClassPath(s).equals(Utilities.getClassPath(other.name))) {
+									pg.addEdge(new DependencyEdge(other, node, true));
+								}
+							}
+						}
+					}
+
 					for(Type t: Type.getArgumentTypes(mn.desc)) {
-						//						try{
-						//							System.out.println(node.name + " " + mn.name + ": ");
-						//						} catch (Exception e){
-						//
-						//						}
 						if(other.name.equals(Utilities.getClassPath(t))){
 							pg.addEdge(new DependencyEdge(other, node));
 						}

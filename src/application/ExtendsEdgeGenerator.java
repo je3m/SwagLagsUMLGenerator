@@ -9,7 +9,7 @@ public class ExtendsEdgeGenerator implements IEdgeGenerator{
 		for(ClassNode node: pg.getNodes()){
 			for(ClassNode other: pg.getNodes()){
 				if((node.superName != null) && node.superName.equals(other.name)){
-					Edge e = new ExtendsEdge(other, node);
+					IEdge e = new ExtendsEdge(other, node);
 					pg.addEdge(e);
 				}
 			}

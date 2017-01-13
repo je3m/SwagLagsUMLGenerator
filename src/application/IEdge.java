@@ -1,11 +1,11 @@
 package application;
 import org.objectweb.asm.tree.ClassNode;
 
-public abstract class Edge {
+public abstract class IEdge {
 	private ClassNode head;
 	private ClassNode tail;
 
-	public Edge(ClassNode head, ClassNode tail){
+	public IEdge(ClassNode head, ClassNode tail){
 		this.head = head;
 		this.tail = tail;
 	}
@@ -14,8 +14,8 @@ public abstract class Edge {
 	public boolean equals(Object obj) {
 		return this.hashCode() == obj.hashCode();
 	}
-	public abstract String getDescription();
 
+	public abstract String getDescription();
 	public ClassNode getHead(){
 		return this.head;
 	}
@@ -32,4 +32,8 @@ public abstract class Edge {
 				":" +
 				this.getDescription()).hashCode();
 	}
+
+	//	public void meme(IEdgeReader lol){
+	//
+	//	}
 }

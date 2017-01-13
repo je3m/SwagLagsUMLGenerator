@@ -2,7 +2,14 @@ package application;
 
 import org.objectweb.asm.tree.ClassNode;
 
-public class DependencyBidirectionalEdge extends Edge {
+public class DependencyBidirectionalEdge extends IEdge {
+
+
+	//Notation is on the head
+	private String manyHead = "";
+
+	//Notation is on the tail
+	private String manyTail = "";
 
 	public DependencyBidirectionalEdge(ClassNode head, ClassNode tail) {
 		super(head, tail);
@@ -10,8 +17,15 @@ public class DependencyBidirectionalEdge extends Edge {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return "dbidirectional"; //lgbtq friendly edge
+		return "dbidirectional" + this.manyHead + this.manyTail; //lgbtq friendly edge
+	}
+
+	public void setManyHead(){
+		this.manyHead = "manyH";
+	}
+
+	public void setManyTail(){
+		this.manyTail = "manyT";
 	}
 
 }

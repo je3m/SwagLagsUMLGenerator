@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class AssociationBidirectionalEdgeReader implements IEdgeReader{
 	@Override
-	public String getEdges(ArrayList<Edge> edges) {
+	public String getEdges(ArrayList<IEdge> edges) {
 		String code = "";
-		for(Edge e : edges){
+		for(IEdge e : edges){
 			if(e.getDescription().contains("abidirectional")){
 				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";

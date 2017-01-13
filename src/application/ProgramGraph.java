@@ -6,14 +6,15 @@ import org.objectweb.asm.tree.ClassNode;
 
 public class ProgramGraph {
 	private ArrayList<ClassNode> c;
-	private HashSet<Edge> e;
+	private HashSet<IEdge> e;
+
 
 	public ProgramGraph(){
 		this.c = new ArrayList<ClassNode>();
-		this.e = new HashSet<Edge>();
+		this.e = new HashSet<IEdge>();
 	}
 
-	public void addEdge(Edge e){
+	public void addEdge(IEdge e){
 		this.e.add(e);
 	}
 
@@ -21,8 +22,8 @@ public class ProgramGraph {
 		this.c.add(n);
 	}
 
-	public ArrayList<Edge> getEdges(){
-		ArrayList<Edge> memes = new ArrayList<>(this.e);
+	public ArrayList<IEdge> getEdges(){
+		ArrayList<IEdge> memes = new ArrayList<>(this.e);
 		return memes;
 	}
 
@@ -30,8 +31,7 @@ public class ProgramGraph {
 		return this.c;
 	}
 
-
-	public void removeEdge(Edge e){
+	public void removeEdge(IEdge e){
 		this.e.remove(e);
 	}
 }

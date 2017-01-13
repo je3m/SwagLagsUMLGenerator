@@ -2,7 +2,7 @@ package application;
 
 import org.objectweb.asm.tree.ClassNode;
 
-public class AssociationEdge extends Edge {
+public class AssociationEdge extends IEdge {
 
 	private String manies = "";
 

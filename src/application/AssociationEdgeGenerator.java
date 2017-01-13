@@ -17,7 +17,6 @@ public class AssociationEdgeGenerator implements IEdgeGenerator {
 
 					if(sig != null) {
 						for(String s :Utilities.getGenericTypes(sig)){
-							System.out.println(other.name + ", " + Utilities.getClassPath(s));
 							if(other.name.equals(Utilities.getClassPath(s))) {
 								pg.addEdge(new AssociationEdge(other, node, true));
 							}

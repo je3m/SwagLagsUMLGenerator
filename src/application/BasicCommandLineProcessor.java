@@ -19,6 +19,7 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 
 		tmp.addEdgeChecker(new AssociationDependencyChecker());
 		tmp.addEdgeChecker(new BidirectionalEdgeChecker());
+		tmp.addEdgeChecker(new DuplicateDependencyEdgeChecker());
 
 		return tmp;
 	}

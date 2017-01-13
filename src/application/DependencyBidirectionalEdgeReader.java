@@ -4,15 +4,28 @@ import java.util.ArrayList;
 
 public class DependencyBidirectionalEdgeReader implements IEdgeReader{
 	@Override
-	public String getEdges(ArrayList<Edge> edges) {
+	public String getEdges(ArrayList<IEdge> edges) {
 		String code = "";
-		for(Edge e : edges){
-			if(e.getDescription().equals("dbidirectional")){
+		for(IEdge e : edges){
+			if(e.getDescription().contains("dbidirectional")){
 				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";
 				code += Utilities.getClassName(e.getHead().name);
-				code += " [arrowhead=\"ovee\", arrowtail=\"ovee\", style=\"dashed\", dir=\"both\"];\n";
+				code += " [arrowhead=\"ovee\", arrowtail=\"ovee\", style=\"dashed\", dir=\"both\"";
+
+				if(e.getDescription().contains("manyH")){
+					code += ", taillabel=\"1..m\", labeldistance=3";
+				}
+
+				if(e.getDescription().contains("manyT")){
+					code += ", headlabel=\"1..m\", labeldistance=3";
+				}
+				code += "];\n";
 			}
+
+
+
+
 		}
 		return code;
 	}

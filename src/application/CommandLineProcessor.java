@@ -1,5 +1,6 @@
 package application;
 
 public abstract class CommandLineProcessor {
-		public abstract CodeProcessor process(String[] args);
+	//	public ArrayList<CommandLineArgumentProcessorDecorator> p;
+	public abstract CodeProcessor process(String[] args);
 }

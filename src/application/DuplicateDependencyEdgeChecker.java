@@ -2,27 +2,27 @@ package application;
 
 import java.util.HashSet;
 
-public class AssociationDependencyChecker implements IEdgeChecker{
+public class DuplicateDependencyEdgeChecker implements IEdgeChecker{
+	HashSet<IEdge> gonDie = new HashSet<IEdge>();
 
 	@Override
 	public void fixEdges(ProgramGraph g) {
-		HashSet<IEdge> gonDie = new HashSet<IEdge>();
-
 		for(IEdge e: g.getEdges()){
 			for(IEdge ne : g.getEdges()) {
 				if ((e.getDescription().contains("dependency")) &&
-						ne.getDescription().contains("association") &&
+						ne.getDescription().contains("dependency") &&
 						e.getHead().equals(ne.getHead()) &&
 						e.getTail().equals(ne.getTail())){
-					gonDie.add(e);
+					if(e.getDescription().contains("many")){
+						//						this.gonDie.add(ne);
+					}
 				}
 			}
 		}
 
-		for(IEdge e : gonDie){
+		System.out.println(this.gonDie.size());
+		for(IEdge e : this.gonDie){
 			g.removeEdge(e);
 		}
-
 	}
-
 }

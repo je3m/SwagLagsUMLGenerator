@@ -21,10 +21,11 @@ public class CodeDependencyEdgeGenerator implements IEdgeGenerator {
 					for(MethodNode mn: methods) {
 						if (mn.localVariables != null) {
 							for(LocalVariableNode vn : (List<LocalVariableNode>) mn.localVariables) {
-
-
 								if(other.name.equals(Utilities.getClassPath(Type.getType(vn.desc)))){
-									pg.addEdge(new DependencyEdge(other, node));
+									if(!pg.getEdges().contains(new DependencyEdge(other, node, true))){
+										System.out.println("thing");
+										pg.addEdge(new DependencyEdge(other, node));
+									}
 								}
 							}
 						}

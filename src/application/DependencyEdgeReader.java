@@ -5,14 +5,23 @@ import java.util.ArrayList;
 public class DependencyEdgeReader implements IEdgeReader{
 
 	@Override
-	public String getEdges(ArrayList<Edge> edges) {
+	public String getEdges(ArrayList<IEdge> edges) {
 		String code = "";
-		for(Edge e : edges){
-			if(e.getDescription().equals("dependency")){
+		for(IEdge e : edges){
+
+			if(e.getDescription().contains("dependency")){
+				System.out.println(e.getHead().name +  " : " + e.getTail().name);
 				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";
 				code += Utilities.getClassName(e.getHead().name);
-				code += " [arrowhead=\"ovee\", style=\"dashed\"];\n";
+				code += " [arrowhead=\"ovee\", style=\"dashed\"";
+
+				if(e.getDescription().contains("many")){
+
+					code += ", headlabel=\"1..m\", labeldistance=3";
+				}
+
+				code += "];\n";
 			}
 		}
 		return code;

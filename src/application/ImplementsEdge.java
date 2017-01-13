@@ -2,7 +2,7 @@ package application;
 
 import org.objectweb.asm.tree.ClassNode;
 
-public class ImplementsEdge extends Edge {
+public class ImplementsEdge extends IEdge {
 
 	public ImplementsEdge(ClassNode head, ClassNode tail) {
 		super(head, tail);
