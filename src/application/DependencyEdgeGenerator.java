@@ -49,10 +49,8 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 							//checking though parameters for array lists contents
 							for (String s : args){
 								if(!s.equals("") && s.contains("<")){
-	
 									for (String sn : Utilities.getGenericTypes(s)){
-	
-										if(Utilities.getClassPath(sn).equals(Utilities.getClassPath(other.name))) {
+										if(Utilities.getClassPath(sn).equals(other.name)) {
 											pg.addEdge(new DependencyEdge(other, node, true));
 										}
 									}
@@ -63,7 +61,7 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 	
 							if(returnType.contains("<")){
 								for (String s : Utilities.getGenericTypes(returnType)) {
-									if(Utilities.getClassPath(s).equals(Utilities.getClassPath(other.name))) {
+									if(Utilities.getClassPath(s).equals(other.name)) {
 										pg.addEdge(new DependencyEdge(other, node, true));
 									}
 								}

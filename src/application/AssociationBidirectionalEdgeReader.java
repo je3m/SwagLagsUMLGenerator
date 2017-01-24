@@ -13,11 +13,11 @@ public class AssociationBidirectionalEdgeReader implements IEdgeReader{
 				code += Utilities.getClassName(e.getHead().name);
 				code += " [arrowhead=\"ovee\", arrowtail=\"ovee\", style=\"solid\", dir=\"both\"";
 				
-				if(e.getDescription().contains("manyH")){
+				if(e.getDescription().contains("manyT")){
 					code += ", headlabel=\"1..m\", labeldistance=3";
 				}
 				
-				if(e.getDescription().contains("manyT")){
+				if(e.getDescription().contains("manyH")){
 					code += ", taillabel=\"1..m\", labeldistance=3";
 				}
 

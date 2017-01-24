@@ -2,6 +2,7 @@ package application;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public abstract class CodeProcessor {
 	protected IGraphReader gr;
@@ -44,5 +45,4 @@ public abstract class CodeProcessor {
 	public void setParser(IGraphReader gr) {
 		this.gr = gr;
 	}
-
 }

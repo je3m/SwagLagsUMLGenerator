@@ -32,9 +32,4 @@ public abstract class IEdge {
 				":" +
 				this.getDescription()).hashCode();
 	}
-
-	//TODO: demo
-	//	public void meme(IEdgeReader lol){
-	//
-	//	}
 }
