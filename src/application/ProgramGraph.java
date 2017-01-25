@@ -1,16 +1,17 @@
 package application;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.stream.Collectors;
 
 import org.objectweb.asm.tree.ClassNode;
 
 public class ProgramGraph {
-	private ArrayList<ClassNode> c;
+	private ArrayList<INode> c;
 	private HashSet<IEdge> e;
 
 
 	public ProgramGraph(){
-		this.c = new ArrayList<ClassNode>();
+		this.c = new ArrayList<INode>();
 		this.e = new HashSet<IEdge>();
 	}
 
@@ -18,7 +19,11 @@ public class ProgramGraph {
 		this.e.add(e);
 	}
 
-	public void addNode(ClassNode n){
+	public void addNode(ClassNode n) {
+		this.c.add(new NormalNode(n));
+	}
+
+	public void addNode(INode n) {
 		this.c.add(n);
 	}
 
@@ -28,6 +33,10 @@ public class ProgramGraph {
 	}
 
 	public ArrayList<ClassNode> getNodes(){
+		return (ArrayList<ClassNode>) this.c.stream().map((x)->x.getClassNode()).collect(Collectors.toList());
+	}
+
+	public ArrayList<INode> getINodes() {
 		return this.c;
 	}
 
