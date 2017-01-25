@@ -2,6 +2,13 @@ package application;
 
 import java.util.ArrayList;
 
+import GraphReading.IEdgeReader;
+import GraphReading.IGraphReader;
+import GraphReading.INodeReader;
+import GraphReading.MethodReader;
+import ProgramGraph.INode;
+import ProgramGraph.ProgramGraph;
+
 public class GraphVizGraphReader implements IGraphReader {
 	private ArrayList<FieldReader> fieldReaders = new ArrayList<FieldReader>();
 	private ArrayList<MethodReader> methodReaders = new ArrayList<MethodReader>();

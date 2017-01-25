@@ -3,6 +3,16 @@ package application;
 import java.io.File;
 import java.io.IOException;
 
+import GraphBuilding.IEdgeChecker;
+import GraphBuilding.IEdgeGenerator;
+import GraphBuilding.IGraphBuilder;
+import GraphBuilding.INodeGenerator;
+import GraphBuilding.IUmlGenerator;
+import GraphReading.IEdgeReader;
+import GraphReading.IGraphReader;
+import GraphReading.INodeReader;
+import GraphReading.MethodReader;
+
 public abstract class CodeProcessor {
 	protected IGraphReader gr;
 	protected IUmlGenerator u;

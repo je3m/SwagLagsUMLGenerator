@@ -4,9 +4,9 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import application.GraphBuilder;
+import GraphBuilding.GraphBuilder;
+import ProgramGraph.ProgramGraph;
 import application.GraphVizGraphReader;
-import application.ProgramGraph;
 
 public class GraphVizReaderTest {
 

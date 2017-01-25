@@ -1,22 +1,22 @@
 package ArgumentProcessors;
 
-import application.AssociationBidirectionalEdgeReader;
-import application.AssociationDependencyChecker;
-import application.AssociationEdgeGenerator;
-import application.AssociationEdgeReader;
-import application.BidirectionalEdgeChecker;
-import application.CodeDependencyEdgeGenerator;
+import GraphBuilding.AssociationDependencyChecker;
+import GraphBuilding.AssociationEdgeGenerator;
+import GraphBuilding.BidirectionalEdgeChecker;
+import GraphBuilding.CodeDependencyEdgeGenerator;
+import GraphBuilding.DependencyEdgeGenerator;
+import GraphBuilding.DuplicateDependencyEdgeChecker;
+import GraphBuilding.ExtendsEdgeGenerator;
+import GraphBuilding.ImplementsEdgeGenerator;
+import GraphReading.AssociationBidirectionalEdgeReader;
+import GraphReading.AssociationEdgeReader;
+import GraphReading.DependencyBidirectionalEdgeReader;
+import GraphReading.DependencyEdgeReader;
+import GraphReading.ExtendsEdgeReader;
+import GraphReading.ImplementsEdgeReader;
+import GraphReading.NormalNodeReader;
 import application.CodeProcessor;
-import application.DependencyBidirectionalEdgeReader;
-import application.DependencyEdgeGenerator;
-import application.DependencyEdgeReader;
-import application.DuplicateDependencyEdgeChecker;
-import application.ExtendsEdgeGenerator;
-import application.ExtendsEdgeReader;
 import application.GraphVizCodeProcessor;
-import application.ImplementsEdgeGenerator;
-import application.ImplementsEdgeReader;
-import application.NormalNodeReader;
 
 public class BasicCommandLineProcessor extends CommandLineProcessor {
 	@Override

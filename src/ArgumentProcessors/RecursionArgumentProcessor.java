@@ -1,7 +1,7 @@
 package ArgumentProcessors;
 
+import GraphBuilding.RecursiveNodeGenerator;
 import application.CodeProcessor;
-import application.RecursiveNodeGenerator;
 
 public class RecursionArgumentProcessor extends CommandLineArgumentProcessorDecorator{
 

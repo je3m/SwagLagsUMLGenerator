@@ -2,6 +2,9 @@ package application;
 
 import java.io.IOException;
 
+import GraphBuilding.GraphBuilder;
+import ProgramGraph.ProgramGraph;
+
 public class GraphVizCodeProcessor extends CodeProcessor {
 
 	public GraphVizCodeProcessor(String[] classes) {

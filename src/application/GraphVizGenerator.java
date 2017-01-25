@@ -8,6 +8,8 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import GraphBuilding.IUmlGenerator;
+
 public class GraphVizGenerator implements IUmlGenerator {
 
 	@Override

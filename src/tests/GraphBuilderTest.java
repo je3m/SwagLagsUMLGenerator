@@ -6,8 +6,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import application.GraphBuilder;
-import application.ProgramGraph;
+import GraphBuilding.GraphBuilder;
+import ProgramGraph.ProgramGraph;
 
 public class GraphBuilderTest {
 

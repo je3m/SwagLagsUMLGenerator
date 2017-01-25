@@ -2,13 +2,13 @@ package ArgumentProcessors;
 
 import java.util.Stack;
 
+import GraphReading.GraphVizPrivateFieldReader;
+import GraphReading.GraphVizPrivateMethodReader;
+import GraphReading.GraphVizProtectedFieldReader;
+import GraphReading.GraphVizProtectedMethodReader;
+import GraphReading.GraphVizPublicFieldReader;
+import GraphReading.GraphVizPublicMethodReader;
 import application.CodeProcessor;
-import application.GraphVizPrivateFieldReader;
-import application.GraphVizPrivateMethodReader;
-import application.GraphVizProtectedFieldReader;
-import application.GraphVizProtectedMethodReader;
-import application.GraphVizPublicFieldReader;
-import application.GraphVizPublicMethodReader;
 
 public class AccessLevelArgumentProcessor extends CommandLineArgumentProcessorDecorator{
 	public AccessLevelArgumentProcessor(CommandLineProcessor p) {
