@@ -8,18 +8,31 @@ import org.objectweb.asm.tree.ClassNode;
 
 public class RecursiveNodeGenerator implements INodeGenerator {
 	HashSet<String> visited = new HashSet<>();
+	HashSet<String> blacklist = new HashSet<>();
 
 	@Override
 	public void generateNodes(ProgramGraph pg, String[] classes) throws IOException {
-		this.visited.add("java/lang/Object");
 		for(String s : classes) {
 			this.readClass(s, pg);
 		}
 	}
 
+	public void addBlackListed(String arg){
+		this.blacklist.add(arg);
+	}
+
+	private boolean isBlackListed(String path){
+		for(String black: this.blacklist){
+			if(path.startsWith(black)){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private void readClass(String s, ProgramGraph pg) throws IOException {
 		s = s.replaceAll("\\.","/");
-		if(this.visited.contains(s)){
+		if(this.visited.contains(s) || this.isBlackListed(s)){
 			return;
 		} else {
 			this.visited.add(s);

@@ -1,12 +1,19 @@
-package application;
+package ArgumentProcessors;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.Stack;
 
+import application.CodeProcessor;
+import application.GraphVizPrivateFieldReader;
+import application.GraphVizPrivateMethodReader;
+import application.GraphVizProtectedFieldReader;
+import application.GraphVizProtectedMethodReader;
+import application.GraphVizPublicFieldReader;
+import application.GraphVizPublicMethodReader;
+
 public class AccessLevelArgumentProcessor extends CommandLineArgumentProcessorDecorator{
-	AccessLevelArgumentProcessor(CommandLineProcessor p) {
+	public AccessLevelArgumentProcessor(CommandLineProcessor p) {
 		super(p);
+		this.prefix = "access";
 	}
 
 	@Override
@@ -17,15 +24,17 @@ public class AccessLevelArgumentProcessor extends CommandLineArgumentProcessorDe
 		boolean found = false;
 		Stack<Integer> indexs = new Stack<Integer>();
 		for(int i = 0; i < args.length; i++){
-			switch(args[i]){
-				case "-private":
+			if(this.verifyPrefix(args[i])){
+				switch(args[i].split("=")[1]){
+				case "private":
 					isPrivate = true;
-				case "-protected":
+				case "protected":
 					isProtected = true;
-				case "-public":
+				case "public":
 					isPublic = true;
 					found = true;
 					indexs.push(i);
+				}
 			}
 		}
 		if(!found){
@@ -49,7 +58,7 @@ public class AccessLevelArgumentProcessor extends CommandLineArgumentProcessorDe
 			c.addFieldReader(new GraphVizPublicFieldReader());
 			c.addMethodReader(new GraphVizPublicMethodReader());
 		}
-		
+
 		return c;
 	}
 }

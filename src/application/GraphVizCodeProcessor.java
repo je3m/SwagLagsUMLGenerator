@@ -2,7 +2,7 @@ package application;
 
 import java.io.IOException;
 
-public class GraphVizCodeProcessor extends CodeProcessor{
+public class GraphVizCodeProcessor extends CodeProcessor {
 
 	public GraphVizCodeProcessor(String[] classes) {
 		this.classes = classes;
