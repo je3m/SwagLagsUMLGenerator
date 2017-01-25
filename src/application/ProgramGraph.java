@@ -33,7 +33,7 @@ public class ProgramGraph {
 	}
 
 	public ArrayList<ClassNode> getNodes(){
-		return (ArrayList<ClassNode>) this.c.stream().map((x)->x.getClassNode()).collect(Collectors.toList());
+		return this.c.stream().map((x)->x.getClassNode()).collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	public ArrayList<INode> getINodes() {
