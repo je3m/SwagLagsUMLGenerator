@@ -13,7 +13,7 @@ public class RecursiveNodeGenerator implements INodeGenerator {
 	@Override
 	public void generateNodes(ProgramGraph pg, String[] classes) throws IOException {
 		for(String s : classes) {
-			this.readClass(s, pg);
+			this.readClass(s, pg, true);
 		}
 	}
 
@@ -30,9 +30,9 @@ public class RecursiveNodeGenerator implements INodeGenerator {
 		return false;
 	}
 
-	private void readClass(String s, ProgramGraph pg) throws IOException {
+	private void readClass(String s, ProgramGraph pg, boolean isWhiteList) throws IOException {
 		s = s.replaceAll("\\.","/");
-		if(this.visited.contains(s) || this.isBlackListed(s)){
+		if(this.visited.contains(s) || (this.isBlackListed(s) && !isWhiteList)){
 			return;
 		} else {
 			this.visited.add(s);
@@ -45,12 +45,12 @@ public class RecursiveNodeGenerator implements INodeGenerator {
 		pg.addNode(node);
 
 		if(node.superName != null) {
-			this.readClass(node.superName, pg);
+			this.readClass(node.superName, pg, false);
 		}
 
 		if(node.interfaces != null) {
 			for (int i = 0; i < node.interfaces.size(); i++){
-				this.readClass((String) node.interfaces.get(i), pg);
+				this.readClass((String) node.interfaces.get(i), pg, false);
 			}
 		}
 	}
