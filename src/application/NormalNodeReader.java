@@ -9,14 +9,10 @@ import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.MethodNode;
 
-public class NormalNodeReader extends INodeReader{
-
-	NormalNodeReader(ArrayList<FieldReader> fr, ArrayList<MethodReader> mr) {
-		super(fr, mr);
-	}
+public class NormalNodeReader implements INodeReader{
 
 	@Override
-	public String getCode(INode node) {
+	public String getCode(INode node, ArrayList<FieldReader> fr, ArrayList<MethodReader> mr) {
 		String code = "";
 
 		if(node.getDescription().equals("normal")) {
@@ -34,7 +30,7 @@ public class NormalNodeReader extends INodeReader{
 			}
 			code += Utilities.getClassName(c.name) + "|";
 			List<FieldNode> fields = new ArrayList<FieldNode>();
-			for(FieldReader r: this.fieldReaders){
+			for(FieldReader r: fr){
 				for(FieldNode n : r.getFields(c)){
 					fields.add(n);
 				}
@@ -54,7 +50,7 @@ public class NormalNodeReader extends INodeReader{
 			}	//
 			code += "|";	//
 			List<MethodNode> methods = new ArrayList<MethodNode>();	//
-			for(MethodReader r: this.methodReaders){
+			for(MethodReader r: mr){
 				for(MethodNode n : r.getMethods(c)){
 					methods.add(n);
 				}

@@ -12,7 +12,7 @@ public class DuplicateDependencyEdgeChecker implements IEdgeChecker{
 				if (((e.getDescription().contains("dependency") &&
 						ne.getDescription().contains("dependency")) ||
 						(e.getDescription().contains("association") &&
-						ne.getDescription().contains("association"))) &&
+								ne.getDescription().contains("association"))) &&
 						e.getHead().equals(ne.getHead()) &&
 						e.getTail().equals(ne.getTail()) && !e.equals(ne)){
 					if(e.getDescription().contains("many")){
@@ -22,7 +22,6 @@ public class DuplicateDependencyEdgeChecker implements IEdgeChecker{
 			}
 		}
 
-		System.out.println(this.gonDie.size());
 		for(IEdge e : this.gonDie){
 			g.removeEdge(e);
 		}

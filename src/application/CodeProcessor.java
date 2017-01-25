@@ -2,7 +2,6 @@ package application;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public abstract class CodeProcessor {
 	protected IGraphReader gr;
@@ -11,6 +10,9 @@ public abstract class CodeProcessor {
 	protected File f;
 	protected String[] classes;
 
+	public void addNodeReader(INodeReader nr) {
+		this.gr.addNodeReader(nr);
+	}
 	public void addEdgeChecker(IEdgeChecker ec){
 		this.g.addEdgeChecker(ec);
 	}

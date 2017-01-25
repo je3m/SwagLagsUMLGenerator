@@ -19,13 +19,12 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 				if(!node.equals(other)){
 					List<MethodNode> methods = node.methods;
 					for(MethodNode mn: methods) {
-	
-	
+
 						//find one to many relationships with dependencies
 						if(mn.signature != null){
 							String argument = mn.signature.replace("(", "").split("\\)")[0];
 							String returnType = Utilities.getClassPath(mn.signature.replace("(", "").split("\\)")[1]);
-	
+
 							//parsing some jank arguments
 							boolean split = true;
 							ArrayList<String> args = new ArrayList<String>();
@@ -38,14 +37,11 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 								} else if ((argument.charAt(i) == ';') && split){
 									args.add("");
 								}
-	
 								if (!((argument.charAt(i) == ';') && split)) {
 									args.set(args.size() - 1, args.get(args.size()-1) +  argument.charAt(i));
 								}
-	
-	
 							}
-	
+
 							//checking though parameters for array lists contents
 							for (String s : args){
 								if(!s.equals("") && s.contains("<")){
@@ -54,11 +50,9 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 											pg.addEdge(new DependencyEdge(other, node, true));
 										}
 									}
-	
 								}
-	
 							}
-	
+
 							if(returnType.contains("<")){
 								for (String s : Utilities.getGenericTypes(returnType)) {
 									if(Utilities.getClassPath(s).equals(other.name)) {
@@ -67,20 +61,16 @@ public class DependencyEdgeGenerator implements IEdgeGenerator {
 								}
 							}
 						}
-	
+
 						for(Type t: Type.getArgumentTypes(mn.desc)) {
 							if(other.name.equals(Utilities.getClassPath(t))){
 								pg.addEdge(new DependencyEdge(other, node));
 							}
 						}
-						//					System.out.println(mn.name);
-						//					System.out.println(other.name + ":" + node.name);
-						//					System.out.println(Utilities.getClassPath(Type.getReturnType(mn.desc)));
+
 						if(other.name.equals(Utilities.getClassPath(Type.getReturnType(mn.desc)))){
-							//						System.out.println(other.name + ":" + node.name);
 							pg.addEdge(new DependencyEdge(other, node));
 						}
-						//					System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 					}
 				}
 			}

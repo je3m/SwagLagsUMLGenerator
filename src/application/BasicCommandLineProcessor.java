@@ -17,6 +17,8 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 		tmp.addEdgeReader(new AssociationBidirectionalEdgeReader());
 		tmp.addEdgeReader(new DependencyBidirectionalEdgeReader());
 
+		tmp.addNodeReader(new NormalNodeReader());
+
 		tmp.addEdgeChecker(new AssociationDependencyChecker());
 		tmp.addEdgeChecker(new BidirectionalEdgeChecker());
 		tmp.addEdgeChecker(new DuplicateDependencyEdgeChecker());
