@@ -11,6 +11,7 @@ import GraphBuilding.IUmlGenerator;
 import GraphReading.IEdgeReader;
 import GraphReading.IGraphReader;
 import GraphReading.INodeReader;
+import GraphReading.IUserGraphMutator;
 import GraphReading.MethodReader;
 
 public abstract class CodeProcessor {
@@ -39,6 +40,10 @@ public abstract class CodeProcessor {
 	}
 	public void addMethodReader(MethodReader r){
 		this.gr.addMethodReader(r);
+	}
+
+	public void addGraphMutator(IUserGraphMutator mut){
+		this.g.addGraphMutator(mut);
 	}
 
 	public abstract void process() throws IOException;

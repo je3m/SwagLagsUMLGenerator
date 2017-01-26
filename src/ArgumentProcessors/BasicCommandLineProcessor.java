@@ -4,6 +4,7 @@ import GraphBuilding.AssociationDependencyChecker;
 import GraphBuilding.AssociationEdgeGenerator;
 import GraphBuilding.BidirectionalEdgeChecker;
 import GraphBuilding.CodeDependencyEdgeGenerator;
+import GraphBuilding.CompositionOverInheritenceMutator;
 import GraphBuilding.DependencyEdgeGenerator;
 import GraphBuilding.DuplicateDependencyEdgeChecker;
 import GraphBuilding.ExtendsEdgeGenerator;
@@ -13,6 +14,8 @@ import GraphReading.AssociationEdgeReader;
 import GraphReading.DependencyBidirectionalEdgeReader;
 import GraphReading.DependencyEdgeReader;
 import GraphReading.ExtendsEdgeReader;
+import GraphReading.GraphVizEdgeReader;
+import GraphReading.GraphVizNodeReader;
 import GraphReading.ImplementsEdgeReader;
 import GraphReading.NormalNodeReader;
 import application.CodeProcessor;
@@ -34,12 +37,16 @@ public class BasicCommandLineProcessor extends CommandLineProcessor {
 		tmp.addEdgeReader(new DependencyEdgeReader());
 		tmp.addEdgeReader(new AssociationBidirectionalEdgeReader());
 		tmp.addEdgeReader(new DependencyBidirectionalEdgeReader());
+		tmp.addEdgeReader(new GraphVizEdgeReader());
 
 		tmp.addNodeReader(new NormalNodeReader());
+		tmp.addNodeReader(new GraphVizNodeReader());
 
 		tmp.addEdgeChecker(new AssociationDependencyChecker());
 		tmp.addEdgeChecker(new BidirectionalEdgeChecker());
 		tmp.addEdgeChecker(new DuplicateDependencyEdgeChecker());
+
+		tmp.addGraphMutator(new CompositionOverInheritenceMutator());
 
 		return tmp;
 	}

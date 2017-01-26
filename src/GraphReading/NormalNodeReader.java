@@ -29,7 +29,7 @@ public class NormalNodeReader implements INodeReader{
 				//is an interface
 				code += "\\<\\<interface\\>\\>\\n";
 			} else if((Opcodes.ACC_ABSTRACT & c.access) != 0){
-				//is an interface
+				//is an abstract class
 				code += "\\<\\<abstract\\>\\>\\n";
 			}
 			code += Utilities.getClassName(c.name) + "|";

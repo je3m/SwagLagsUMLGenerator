@@ -14,6 +14,7 @@ public class GraphVizPrivateMethodReader implements MethodReader {
 		List<MethodNode> methods = c.methods;
 		List<MethodNode> returnMethods = new ArrayList<MethodNode>();
 		for(MethodNode method: methods){
+
 			if((method.access & Opcodes.ACC_PRIVATE) > 0){
 				returnMethods.add(method);
 			}
