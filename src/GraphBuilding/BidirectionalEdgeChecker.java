@@ -19,7 +19,7 @@ public class BidirectionalEdgeChecker implements IEdgeChecker{
 						e1.getTail().equals(e2.getHead())){
 					if(e1.getDescription().contains("association") &&
 							e2.getDescription().contains("association")){
-						AssociationBidirectionalEdge testEdge = new AssociationBidirectionalEdge(e1.getTail(), e1.getHead());
+						AssociationBidirectionalEdge testEdge = new AssociationBidirectionalEdge(e1.getITail(), e1.getIHead());
 						if(e2.getDescription().contains("many")){
 							testEdge.setManyTail();
 						}
@@ -29,7 +29,7 @@ public class BidirectionalEdgeChecker implements IEdgeChecker{
 						if(!addEdges.contains(testEdge)){
 							removeEdges.add(e1);
 							removeEdges.add(e2);
-							AssociationBidirectionalEdge newEdge = new AssociationBidirectionalEdge(e1.getHead(), e1.getTail());
+							AssociationBidirectionalEdge newEdge = new AssociationBidirectionalEdge(e1.getIHead(), e1.getITail());
 							if(e1.getDescription().contains("many")){
 								newEdge.setManyTail();
 							}
@@ -41,7 +41,7 @@ public class BidirectionalEdgeChecker implements IEdgeChecker{
 						}
 					} else if (e1.getDescription().contains("dependency") &&
 							e2.getDescription().contains("dependency")){
-						DependencyBidirectionalEdge testEdge = new DependencyBidirectionalEdge(e1.getTail(), e1.getHead());
+						DependencyBidirectionalEdge testEdge = new DependencyBidirectionalEdge(e1.getITail(), e1.getIHead());
 						if(e2.getDescription().contains("many")){
 							testEdge.setManyTail();
 						}
@@ -52,7 +52,7 @@ public class BidirectionalEdgeChecker implements IEdgeChecker{
 							removeEdges.add(e1);
 							removeEdges.add(e2);
 
-							DependencyBidirectionalEdge newEdge = new DependencyBidirectionalEdge(e1.getHead(), e1.getTail());
+							DependencyBidirectionalEdge newEdge = new DependencyBidirectionalEdge(e1.getIHead(), e1.getITail());
 							if(e1.getDescription().contains("many")){
 								newEdge.setManyTail();
 							}

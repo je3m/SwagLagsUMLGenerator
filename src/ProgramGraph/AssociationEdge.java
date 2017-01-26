@@ -1,16 +1,14 @@
 package ProgramGraph;
 
-import org.objectweb.asm.tree.ClassNode;
-
 public class AssociationEdge extends IEdge {
 
 	private String manies = "";
 
-	public AssociationEdge(ClassNode head, ClassNode tail) {
+	public AssociationEdge(INode head, INode tail) {
 		super(head, tail);
 	}
 
-	public AssociationEdge(ClassNode head, ClassNode tail, boolean many) {
+	public AssociationEdge(INode head, INode tail, boolean many) {
 		this(head,tail);
 		if(many) {
 			this.setManies();

@@ -2,6 +2,7 @@ package application;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import GraphBuilding.IEdgeChecker;
 import GraphBuilding.IEdgeGenerator;
@@ -61,5 +62,13 @@ public abstract class CodeProcessor {
 	}
 	public void setParser(IGraphReader gr) {
 		this.gr = gr;
+	}
+
+	public List<MethodReader> getMethodReaders(){
+		return this.gr.getMethodReaders();
+	}
+
+	public List<FieldReader> getFieldReaders(){
+		return this.gr.getFieldReaders();
 	}
 }

@@ -1,7 +1,5 @@
 package ProgramGraph;
 
-import org.objectweb.asm.tree.ClassNode;
-
 public class DependencyBidirectionalEdge extends IEdge {
 
 
@@ -11,7 +9,7 @@ public class DependencyBidirectionalEdge extends IEdge {
 	//Notation is on the tail
 	private String manyTail = "";
 
-	public DependencyBidirectionalEdge(ClassNode head, ClassNode tail) {
+	public DependencyBidirectionalEdge(INode head, INode tail) {
 		super(head, tail);
 	}
 

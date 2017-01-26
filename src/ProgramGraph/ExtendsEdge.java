@@ -1,9 +1,8 @@
 package ProgramGraph;
-import org.objectweb.asm.tree.ClassNode;
 
 public class ExtendsEdge extends IEdge {
 
-	public ExtendsEdge(ClassNode head, ClassNode tail){
+	public ExtendsEdge(INode head, INode tail){
 		super(head, tail);
 	}
 

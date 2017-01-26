@@ -1,30 +1,28 @@
 package ProgramGraph;
 
-import org.objectweb.asm.tree.ClassNode;
-
 public class AssociationBidirectionalEdge extends IEdge {
-	
+
 	//Notation is on the head
 	private String manyHead = "";
-	
+
 	//Notation is on the tail
 	private String manyTail = "";
-	
-	public AssociationBidirectionalEdge(ClassNode head, ClassNode tail) {
+
+	public AssociationBidirectionalEdge(INode head, INode tail) {
 		super(head, tail);
 	}
-	
+
 	public void setManyHead(){
-		manyHead = "manyH";
+		this.manyHead = "manyH";
 	}
-	
+
 	public void setManyTail(){
-		manyTail = "manyT";
+		this.manyTail = "manyT";
 	}
 
 	@Override
 	public String getDescription() {
-		return "abidirectional" + manyHead + manyTail; //lgbtq friendly edge
+		return "abidirectional" + this.manyHead + this.manyTail; //lgbtq friendly edge
 	}
 
 }

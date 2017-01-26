@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import GraphReading.IEdgeReader;
 import GraphReading.IGraphReader;
@@ -52,5 +53,15 @@ public class GraphVizGraphReader implements IGraphReader {
 
 		code += "\n}";
 		return code;
+	}
+
+	@Override
+	public List<MethodReader> getMethodReaders() {
+		return this.methodReaders;
+	}
+
+	@Override
+	public List<FieldReader> getFieldReaders() {
+		return this.fieldReaders;
 	}
 }

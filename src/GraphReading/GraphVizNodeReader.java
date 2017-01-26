@@ -11,7 +11,7 @@ public class GraphVizNodeReader implements INodeReader {
 	public String getCode(INode n, ArrayList<FieldReader> fr, ArrayList<MethodReader> mr) {
 		String code = "";
 
-		if(n.getDescription().contains("GraphVizNode")){
+		if(n.getDescription().startsWith("GraphVizNode")){
 			code += n.getDescription().substring(n.getDescription().indexOf(' ')+1);
 		}
 

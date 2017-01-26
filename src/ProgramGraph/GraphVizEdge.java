@@ -1,11 +1,9 @@
 package ProgramGraph;
 
-import org.objectweb.asm.tree.ClassNode;
-
 public class GraphVizEdge extends IEdge {
 	private String code;
 
-	public GraphVizEdge(ClassNode head, ClassNode tail) {
+	public GraphVizEdge(INode head, INode tail) {
 		super(head, tail);
 	}
 

@@ -1,12 +1,9 @@
 package ProgramGraph;
 
-import org.objectweb.asm.tree.ClassNode;
-
 public class ImplementsEdge extends IEdge {
 
-	public ImplementsEdge(ClassNode head, ClassNode tail) {
+	public ImplementsEdge(INode head, INode tail) {
 		super(head, tail);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

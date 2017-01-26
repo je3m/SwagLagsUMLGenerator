@@ -43,4 +43,8 @@ public class ProgramGraph {
 	public void removeEdge(IEdge e){
 		this.e.remove(e);
 	}
+
+	public void removeNode(INode n) {
+		this.c.remove(n);
+	}
 }
