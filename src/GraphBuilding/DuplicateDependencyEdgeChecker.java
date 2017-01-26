@@ -22,6 +22,19 @@ public class DuplicateDependencyEdgeChecker implements IEdgeChecker{
 						this.gonDie.add(ne);
 					}
 				}
+
+				if (((e.getDescription().contains("abidirectional") &&
+						ne.getDescription().contains("abidirectional")) ||
+						(e.getDescription().contains("dbidirectional") &&
+								ne.getDescription().contains("dbidirectional"))) &&
+						((e.getHead().equals(ne.getHead()) &&
+								e.getTail().equals(ne.getTail()))
+								|| (e.getHead().equals(ne.getTail()) &&
+										e.getTail().equals(ne.getHead())))  && !e.equals(ne)){
+					if(e.getDescription().contains("many")){
+						this.gonDie.add(ne);
+					}
+				}
 			}
 		}
 
