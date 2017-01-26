@@ -16,6 +16,7 @@ import GraphBuilding.DependencyEdgeGenerator;
 import GraphBuilding.DuplicateDependencyEdgeChecker;
 import GraphBuilding.ExtendsEdgeGenerator;
 import GraphBuilding.ImplementsEdgeGenerator;
+import GraphBuilding.SingletonMutator;
 import GraphReading.AssociationBidirectionalEdgeReader;
 import GraphReading.AssociationEdgeReader;
 import GraphReading.DependencyBidirectionalEdgeReader;
@@ -59,6 +60,7 @@ public class Application {
 		tmp.addEdgeChecker(new DuplicateDependencyEdgeChecker());
 
 		tmp.addGraphMutator(new CompositionOverInheritenceMutator(tmp.getFieldReaders(), tmp.getMethodReaders()));
+		tmp.addGraphMutator(new SingletonMutator(tmp.getFieldReaders(), tmp.getMethodReaders()));
 
 		tmp.process();
 	}
