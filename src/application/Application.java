@@ -5,18 +5,17 @@ import java.io.IOException;
 import ArgumentProcessors.AccessLevelArgumentProcessor;
 import ArgumentProcessors.BasicCommandLineProcessor;
 import ArgumentProcessors.OutputFileCommandLineArgumentProcessorDecorator;
+import ArgumentProcessors.PatternDetectorArgumentProcessor;
 import ArgumentProcessors.RecursionArgumentProcessor;
 import ArgumentProcessors.SettingsFileCommandArgumentProcessor;
 import GraphBuilding.AssociationDependencyChecker;
 import GraphBuilding.AssociationEdgeGenerator;
 import GraphBuilding.BidirectionalEdgeChecker;
 import GraphBuilding.CodeDependencyEdgeGenerator;
-import GraphBuilding.CompositionOverInheritenceMutator;
 import GraphBuilding.DependencyEdgeGenerator;
 import GraphBuilding.DuplicateDependencyEdgeChecker;
 import GraphBuilding.ExtendsEdgeGenerator;
 import GraphBuilding.ImplementsEdgeGenerator;
-import GraphBuilding.SingletonMutator;
 import GraphReading.AssociationBidirectionalEdgeReader;
 import GraphReading.AssociationEdgeReader;
 import GraphReading.DependencyBidirectionalEdgeReader;
@@ -33,8 +32,9 @@ public class Application {
 		OutputFileCommandLineArgumentProcessorDecorator o = new OutputFileCommandLineArgumentProcessorDecorator(c);
 		RecursionArgumentProcessor r = new RecursionArgumentProcessor(o);
 		AccessLevelArgumentProcessor a = new AccessLevelArgumentProcessor(r);
+		PatternDetectorArgumentProcessor p = new PatternDetectorArgumentProcessor(a);
 
-		SettingsFileCommandArgumentProcessor s = new SettingsFileCommandArgumentProcessor(a);
+		SettingsFileCommandArgumentProcessor s = new SettingsFileCommandArgumentProcessor(p);
 
 		CodeProcessor tmp = s.process(args);
 
@@ -58,9 +58,6 @@ public class Application {
 		tmp.addEdgeChecker(new AssociationDependencyChecker());
 		tmp.addEdgeChecker(new BidirectionalEdgeChecker());
 		tmp.addEdgeChecker(new DuplicateDependencyEdgeChecker());
-
-		tmp.addGraphMutator(new CompositionOverInheritenceMutator(tmp.getFieldReaders(), tmp.getMethodReaders()));
-		tmp.addGraphMutator(new SingletonMutator(tmp.getFieldReaders(), tmp.getMethodReaders()));
 
 		tmp.process();
 	}
