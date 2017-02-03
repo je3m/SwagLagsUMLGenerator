@@ -199,8 +199,8 @@ CodeProcessor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1892</x>
-      <y>1353</y>
+      <x>1991</x>
+      <y>1617</y>
       <w>264</w>
       <h>154</h>
     </coordinates>
@@ -218,8 +218,8 @@ IEdge
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1639</x>
-      <y>1584</y>
+      <x>1738</x>
+      <y>1848</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -231,8 +231,8 @@ IEdge
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1694</x>
-      <y>1496</y>
+      <x>1793</x>
+      <y>1760</y>
       <w>231</w>
       <h>110</h>
     </coordinates>
@@ -318,13 +318,13 @@ ArrayList&lt;FieldReader&gt; fReaders;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1980</x>
+      <x>2079</x>
       <y>1232</y>
-      <w>209</w>
-      <h>143</h>
+      <w>110</w>
+      <h>407</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;350.0;80.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -454,8 +454,8 @@ IGraphBuilder
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1804</x>
-      <y>1584</y>
+      <x>1903</x>
+      <y>1848</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -467,8 +467,8 @@ IGraphBuilder
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1859</x>
-      <y>1496</y>
+      <x>1958</x>
+      <y>1760</y>
       <w>99</w>
       <h>110</h>
     </coordinates>
@@ -798,8 +798,8 @@ FieldReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1969</x>
-      <y>1584</y>
+      <x>2068</x>
+      <y>1848</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -811,8 +811,8 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2013</x>
-      <y>1496</y>
+      <x>2112</x>
+      <y>1760</y>
       <w>44</w>
       <h>110</h>
     </coordinates>
@@ -822,8 +822,8 @@ FieldReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2134</x>
-      <y>1584</y>
+      <x>2233</x>
+      <y>1848</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -835,8 +835,8 @@ FieldReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2123</x>
-      <y>1496</y>
+      <x>2222</x>
+      <y>1760</y>
       <w>99</w>
       <h>110</h>
     </coordinates>
@@ -1014,8 +1014,8 @@ IEdgeReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>924</x>
-      <y>1738</y>
+      <x>880</x>
+      <y>1881</y>
       <w>231</w>
       <h>77</h>
     </coordinates>
@@ -1027,8 +1027,8 @@ IEdgeReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1078</x>
-      <y>1496</y>
+      <x>1034</x>
+      <y>1639</y>
       <w>143</w>
       <h>264</h>
     </coordinates>
@@ -1101,8 +1101,8 @@ IEdgeReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2068</x>
-      <y>1705</y>
+      <x>2167</x>
+      <y>1969</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -1114,8 +1114,8 @@ IEdgeReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2090</x>
-      <y>1496</y>
+      <x>2189</x>
+      <y>1760</y>
       <w>44</w>
       <h>231</h>
     </coordinates>
@@ -1125,8 +1125,8 @@ IEdgeReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1166</x>
-      <y>1738</y>
+      <x>1122</x>
+      <y>1881</y>
       <w>231</w>
       <h>77</h>
     </coordinates>
@@ -1138,8 +1138,8 @@ IEdgeReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1232</x>
-      <y>1496</y>
+      <x>1188</x>
+      <y>1639</y>
       <w>33</w>
       <h>264</h>
     </coordinates>
@@ -1149,8 +1149,8 @@ IEdgeReader
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1188</x>
-      <y>1364</y>
+      <x>1144</x>
+      <y>1507</y>
       <w>319</w>
       <h>143</h>
     </coordinates>
@@ -1174,13 +1174,13 @@ IEdgeChecker
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1397</x>
+      <x>1353</x>
       <y>979</y>
-      <w>605</w>
-      <h>407</h>
+      <w>649</w>
+      <h>550</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;350.0;530.0;10.0</additional_attributes>
+    <additional_attributes>10.0;480.0;140.0;190.0;570.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1208,8 +1208,8 @@ IEdgeChecker
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1408</x>
-      <y>1738</y>
+      <x>1364</x>
+      <y>1881</y>
       <w>231</w>
       <h>77</h>
     </coordinates>
@@ -1221,8 +1221,8 @@ IEdgeChecker
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1320</x>
-      <y>1496</y>
+      <x>1276</x>
+      <y>1639</y>
       <w>187</w>
       <h>264</h>
     </coordinates>
@@ -1257,8 +1257,8 @@ IUserGraphMutator
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1892</x>
-      <y>1694</y>
+      <x>1991</x>
+      <y>1958</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -1270,8 +1270,8 @@ IUserGraphMutator
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1936</x>
-      <y>1496</y>
+      <x>2035</x>
+      <y>1760</y>
       <w>44</w>
       <h>220</h>
     </coordinates>
@@ -1439,13 +1439,13 @@ INodeReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1694</x>
-      <y>1188</y>
-      <w>198</w>
-      <h>88</h>
+      <x>1793</x>
+      <y>1298</y>
+      <w>66</w>
+      <h>33</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;60.0</additional_attributes>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1462,13 +1462,13 @@ INodeReader
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1793</x>
+      <x>1826</x>
       <y>1210</y>
-      <w>165</w>
-      <h>176</h>
+      <w>88</w>
+      <h>550</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;140.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;70.0;10.0;480.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1493,5 +1493,108 @@ INodeReader
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1573</x>
+      <y>1430</y>
+      <w>231</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>DependenyInversionMutator
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1573</x>
+      <y>1518</y>
+      <w>231</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>AdapterMutator
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1573</x>
+      <y>1606</y>
+      <w>231</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>DecoratorMutator
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1573</x>
+      <y>1694</y>
+      <w>231</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>BadMutator
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1793</x>
+      <y>1375</y>
+      <w>66</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1793</x>
+      <y>1463</y>
+      <w>66</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1793</x>
+      <y>1551</y>
+      <w>66</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1793</x>
+      <y>1639</y>
+      <w>66</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1793</x>
+      <y>1727</y>
+      <w>66</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
