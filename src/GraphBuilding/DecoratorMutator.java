@@ -20,11 +20,11 @@ import ProgramGraph.ProgramGraph;
 import application.FieldReader;
 import application.Utilities;
 
-public class CompositionOverInheritenceMutator implements IUserGraphMutator {
+public class DecoratorMutator implements IUserGraphMutator {
 	private List<FieldReader> fr;
 	private List<MethodReader> mr;
 
-	public CompositionOverInheritenceMutator(List<FieldReader> fr, List<MethodReader> mr) {
+	public DecoratorMutator(List<FieldReader> fr, List<MethodReader> mr) {
 		this.fr = fr;
 		this.mr = mr;
 	}
@@ -34,17 +34,21 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 
 		String code = "";
 
-
 		code += Utilities.getClassName(e.getTail().name);
 		code += " -> ";
 		code += Utilities.getClassName(e.getHead().name);
-		code += " [arrowhead=\"onormal\", style=\"solid\", color=\"orange\"];\n";
+
+		if(e.getDescription().contains("extends")){
+			code += " [arrowhead=\"onormal\", style=\"solid\"";
+		} else if(e.getDescription().contains("implements")){
+			code += " [arrowhead=\"onormal\", style=\"dashed\"";
+		}
+
+		code += ", label=\"<<decorates>>\"];\n";
 
 		ans.setCode(code);
 
 		return ans;
-
-
 	}
 
 	@SuppressWarnings("unchecked")
@@ -56,24 +60,49 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 		HashSet<INode> nodesToKill = new HashSet<INode>();
 		HashSet<INode> nodesToAdd = new HashSet<INode>();
 
-
 		for (IEdge e : g.getEdges()){
-			if(e.getDescription().contains("extends")){
-				for(MethodNode m: (List<MethodNode>) e.getTail().methods){
-					if (m.name.contains("<init>")) {
-						continue;
-					}
-					for(MethodNode n: (List<MethodNode>) e.getHead().methods ) {
-						if(n.name.equals(m.name)) {
+			if((e.getDescription().contains("extends") ||
+					e.getDescription().contains("implements")) &&
+					((e.getHead().access & Opcodes.ACC_ABSTRACT) != 0)){
+				for(FieldNode f : (List<FieldNode>) e.getTail().fields){
+					if(Utilities.getClassPath(Type.getType(f.desc)).equals(e.getHead().name)){
+						boolean isGood = true;
+						for(MethodNode mh: (List<MethodNode>) e.getHead().methods){
+							if (mh.name.contains("<init>")) {
+								continue;
+							}
+							boolean found = false;
+							for(MethodNode mt: (List<MethodNode>) e.getTail().methods){
+								if(mh.desc.equals(mt.desc)){
+									found = true;
+									break;
+								}
+							}
+							if(!found) {
+								isGood = false;
+								break;
+							}
+						}
+						if(isGood){
 							nodesToKill.add(e.getIHead());
 							nodesToKill.add(e.getITail());
 
-							nodesToAdd.add(this.makeNode(e.getIHead()));
-							nodesToAdd.add(this.makeNode(e.getITail()));
+							nodesToAdd.add(this.makeNode(e.getIHead(), "component"));
+							nodesToAdd.add(this.makeNode(e.getITail(), "decorator"));
 
 							edgesToKill.add(e);
 							edgesToAdd.add(this.makeEdge(e));
-							System.out.println("Orange: " + ((m.access & Opcodes.ACC_ABSTRACT) != 0) + " " + e.getTail().name + " Meme'd on " + m.name);
+
+							for(IEdge e1 : g.getEdges()){
+								if((e1.getDescription().contains("extends") ||
+										e1.getDescription().contains("implements")) &&
+										e1.getHead().equals(e.getTail())){
+									nodesToKill.add(e1.getITail());
+
+									nodesToAdd.add(this.makeNode(e1.getITail(), "decorator"));
+								}
+							}
+
 						}
 					}
 				}
@@ -97,7 +126,7 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 		}
 	}
 
-	private INode makeNode(INode node) {
+	private INode makeNode(INode node, String label) {
 		GraphVizNode newNode = new GraphVizNode(node.getClassNode());
 
 		String code = "";
@@ -107,7 +136,8 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 			c.name = c.name.replaceAll("\\$", "_");
 			code += Utilities.getClassName(c.name) + " [\n";
 			code += "shape =\"record\",\n";
-			code += "color =\"orange\",\n";
+			code += "style =\"filled\",\n";
+			code += "fillcolor =\"green\",\n";
 			code += "label = \"{";
 			if((Opcodes.ACC_INTERFACE & c.access) != 0){
 				//is an interface
@@ -116,6 +146,7 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 				//is an abstract class
 				code += "\\<\\<abstract\\>\\>\\n";
 			}
+			code += "\\<\\<" + label + "\\>\\>\\n";
 			code += Utilities.getClassName(c.name) + "|";
 			List<FieldNode> fields = new ArrayList<FieldNode>();
 			for(FieldReader r: this.fr){
@@ -184,4 +215,3 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 
 	}
 }
-
