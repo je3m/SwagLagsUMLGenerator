@@ -6,7 +6,7 @@ import ProgramGraph.IEdge;
 import ProgramGraph.ProgramGraph;
 
 public class DuplicateDependencyEdgeChecker implements IEdgeChecker{
-	HashSet<IEdge> gonDie = new HashSet<IEdge>();
+	private HashSet<IEdge> gonDie = new HashSet<IEdge>();
 
 	@Override
 	public void fixEdges(ProgramGraph g) {
