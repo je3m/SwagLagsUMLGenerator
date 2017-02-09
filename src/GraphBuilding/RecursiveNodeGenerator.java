@@ -39,7 +39,6 @@ public class RecursiveNodeGenerator implements INodeGenerator {
 		} else {
 			this.visited.add(s);
 		}
-		System.out.println(s);
 		ClassReader reader = new ClassReader(s);
 		ClassNode node = new ClassNode();
 		reader.accept(node, ClassReader.EXPAND_FRAMES);

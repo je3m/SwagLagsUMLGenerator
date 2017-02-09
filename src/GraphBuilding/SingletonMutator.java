@@ -44,8 +44,6 @@ public class SingletonMutator implements IUserGraphMutator{
 				if (((mn.access & Opcodes.ACC_STATIC) != 0) &&
 						(Utilities.getClassPath(Type.getReturnType(mn.desc)).equals(n.getClassNode().name)))
 				{
-					System.out.println("Singleton detected in class " + n.getClassNode().name);
-
 					nodesToKill.add(n);
 
 					nodesToAdd.add(this.makeNode(n));

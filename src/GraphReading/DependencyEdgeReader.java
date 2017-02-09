@@ -13,7 +13,6 @@ public class DependencyEdgeReader implements IEdgeReader{
 		for(IEdge e : edges){
 
 			if(e.getDescription().contains("dependency")){
-				System.out.println(e.getHead().name +  " : " + e.getTail().name);
 				code += Utilities.getClassName(e.getTail().name);
 				code += " -> ";
 				code += Utilities.getClassName(e.getHead().name);

@@ -28,8 +28,6 @@ public class GraphVizGenerator implements IUmlGenerator {
 				file.toAbsolutePath().toString(),
 				"-o" + f.getAbsolutePath());
 		process.start();
-
-		System.out.println(process.command());
 	}
 
 }

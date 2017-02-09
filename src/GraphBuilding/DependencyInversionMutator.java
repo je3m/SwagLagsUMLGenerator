@@ -82,7 +82,6 @@ public class DependencyInversionMutator implements IUserGraphMutator {
 
 				edgesToKill.add(e);
 				edgesToAdd.add(this.makeEdge(e));
-				System.out.println("found violation in dependency inversion at " + e.getTail().name);
 			}
 		}
 

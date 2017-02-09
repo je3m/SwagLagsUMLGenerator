@@ -73,7 +73,6 @@ public class CompositionOverInheritenceMutator implements IUserGraphMutator {
 
 							edgesToKill.add(e);
 							edgesToAdd.add(this.makeEdge(e));
-							System.out.println("Orange: " + ((m.access & Opcodes.ACC_ABSTRACT) != 0) + " " + e.getTail().name + " Meme'd on " + m.name);
 						}
 					}
 				}
