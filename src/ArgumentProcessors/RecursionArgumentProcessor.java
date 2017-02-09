@@ -25,7 +25,9 @@ public class RecursionArgumentProcessor extends CommandLineArgumentProcessorDeco
 						break;
 					}
 				}
-				if(i > j){
+				if(j == args.length){
+					this.removeIndex(args, i);
+				} else if(i > j){
 					args = this.removeIndex(this.removeIndex(args, i), j);
 				} else {
 					args = this.removeIndex(this.removeIndex(args, j), i);

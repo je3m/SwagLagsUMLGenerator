@@ -63,7 +63,7 @@ public class BadDecoratorMutator implements IUserGraphMutator {
 		for (IEdge e : g.getEdges()){
 			if((e.getDescription().contains("extends") ||
 					e.getDescription().contains("implements")) &&
-					((e.getHead().access & Opcodes.ACC_ABSTRACT) != 0)){
+					((e.getTail().access & Opcodes.ACC_ABSTRACT) != 0)){
 				for(FieldNode f : (List<FieldNode>) e.getTail().fields){
 					if(Utilities.getClassPath(Type.getType(f.desc)).equals(e.getHead().name)){
 						boolean isGood = true;

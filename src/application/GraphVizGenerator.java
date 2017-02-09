@@ -16,6 +16,10 @@ public class GraphVizGenerator implements IUmlGenerator {
 	public void writeFile(File f, String data) throws IOException {
 
 		List<String> lines = Arrays.asList(data.split("\\n"));
+		File dir = Paths.get("./input_output").toFile();
+		if(!dir.exists()){
+			dir.mkdir();
+		}
 		Path file = Paths.get("./input_output/temp.dot");
 		Files.write(file, lines);
 
